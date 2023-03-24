@@ -1009,8 +1009,11 @@
                 font-weight: bold;
             }
             .header-nav a{
-                font-size: 16px;
+                font-size: 13px;
                 color: white;
+            }
+            .header-nav a i{
+                font-size: 1.25rem;
             }
 
             .header-nav a:hover{
