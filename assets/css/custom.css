@@ -1306,4 +1306,52 @@
                 width: auto;
                 overflow: hidden;
             }
+            .menu-slip-checkout{
+                height: calc(100vh - 118px);
+            }
+
+            /* styles for dark pos buttons starts here */
+            .dark-pos-home{
+                background-color:#111315;
+            }
+
+            .dark-pos-home .btn-light{
+                background: #3E3F40;
+                color: white;
+                border-color:#3E3F40 ;
+            }
+            .dark-pos-home .card.menu-slip-checkout,.dark-pos-home .card.dark-card{
+                background-color: #222326 !important;
+                background: #222326;
+            }
+            .dark-pos-home .btn-outline-light{
+                color: white;
+            }
+            .dark-pos-home .btn-outline-light:hover{
+                color: black;
+            }
+            .border-radius-0{
+                border-radius: 0px !important;
+            }
+            .select-picker-cont .filter-option-inner-inner{
+                padding-right: 2.5rem;
+            }
+            .select-picker-cont button{
+                border-radius: 0px;
+            }
+            .select-picker-cont .bootstrap-select .dropdown-menu{
+                border-radius: 0px;
+            }
+            .dark-pos-home .btn-primary.disabled, .btn-primary:disabled{
+                background-color: #3E3F40;
+                background: #3E3F40;
+                color:#626466;
+                border-color:#3E3F40 ;
+            }
+            .dark-pos-home .btn.disabled{
+                color:#626466;
+                border-color:#3E3F40 ;
+            }
+            
+
             

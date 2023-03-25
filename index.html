@@ -35,7 +35,7 @@
 
 </head>
 
-<body data-topbar="dark" data-layout="horizontal">
+<body data-topbar="dark" data-layout="horizontal" class="dark-pos-home" >
 
     <!-- Loader -->
     <div id="preloader">
@@ -417,321 +417,144 @@
         <!-- ============================================================== -->
         <div class="main-content">
 
-            <div class="page-content">
+            <div class="page-content pb-0">
                 <div class="container-fluid">
-
-                    <!-- start page title -->
                     <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0 font-size-18">My Sales Report</h4>
+                        <div class="col-sm-12 col-md-7 col-lg-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card dark-card">
+                                        <div class="card-body">
+                                            <div class="d-flex d-none">
+                                                <div class="flex-grow-1">
+                                                   
+                                                </div>
+                                                <div>
+                                                    <a href="#" class="m-0 waves-effect">
+                                                        <div class="avatar-sm">
+                                                            <span class="avatar-title rounded-circle bg-warning bg-soft text-warning font-21">
+                                                                <i class="mdi mdi-barcode-scan"></i>
+                                                            </span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <form class="mt-4 mt-sm-0 float-sm-end d-flex align-items-center w-100">
+                                                <div class="select-picker-cont">
+                                                    <select class="form-control selectpicker form-select pr-5" data-live-search="true" title="Select Menu" data-style="form-selec btn border pr-5 border-radius-0">
+                                                        <option value="" selected>All Menu Items</option>
+                                                        <option value="">Raw Sausage</option>   
+                                                        <option value="">Wheat flour</option>                                                               
+                                                    </select>
+                                                </div>
+                                                <div class="search-box mb-0 me-2 d-flex flex-grow-1">
+                                                    <div class="position-relative flex-grow-1">
+                                                        <input type="text" class="form-control bg-light border-light rounded border-radius-0" placeholder="Search...">
+                                                        <i class="bx bx-search-alt search-icon"></i>
+                                                    </div>
+                                                    <button type="button" class="btn btn-primary waves-effect waves-light text-white border-radius-0">
+                                                        <i class="bx bx-search-alt font-size-16 align-middle me-2"></i> Search
+                                                    </button>
+                                                </div>
 
-                                <div class="page-title-right d-none">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Product Sales</a></li>
-                                        <li class="breadcrumb-item active">Sales Report</li>
-                                    </ol>
+                                                <div class="dropdown mb-0 d-none">
+                                                    <a class="btn btn-link text-muted  waves-effect" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
+                                                        <i class="mdi mdi-barcode-scan font-size-20"></i>
+                                                    </a>
+                                                  
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end page title -->
-
-                    <!-- eTransactions table -->
-
-                   
-
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                
-                                <div class="card-header py-3">
-                                    <div class="d-flex tbl-filter-container justify-content-between align-items-center py-0 m-0">
-                                        <div class="d-flex the-filters">
-                                            <div class="d-none">
-                                                <div class="dropdown d-inline-block">
-                                                    <button type="button" class="btn header-item h-auto px-4 waves-effect d-flex justify-content-center align-items-center pb-4 pt-4 pr-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <span class="d-none d-xl-inline-block ms-1 prof-name text-left mr-3 pe-4">
-                                                            <span class="text-primary">Filter By Cashier</span>
-                                                                <h5 class="mb-0 pb-0 text-black text-capitalize">All Cashiers</h5>
-                                                        </span>
-                                                        <i class="mdi mdi-chevron-down d-xl-inline-block font-size-20 pl-4 pr-4"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu dropdown-menu-end w-100 text-capitalize">
-                                                        <a class="d-flex px-3 pb-2 waves-effect dropdown-item active" href="javascript: void(0);"><span>All Cashiers</span></a>
-                                                        <a class="d-flex px-3 pb-2 waves-effect dropdown-item" href="javascript: void(0);"><span>Alex Wanjala</span></a>
-                                                        <a class="d-flex px-3 pb-2 waves-effect dropdown-item" href="javascript: void(0);"><span>Kelvin Kiptum</span></a>
-                                                        <a class="d-flex px-3 pb-2 waves-effect dropdown-item" href="javascript: void(0);"><span>Andrew Kinoti</span></a>
-                                                    </div>
+                                <div class="col-12">
+                                    <div class="row menu-items-options-cont">
+                                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                                            <div class="card dark-card waves-effect w-100">
+                                                <div class="card-body">
+                                                    <small class="text-uppercase text-white opacity-50">Snacks</small>
+                                                    <h5 class="mb-4 text-white">French Fries</h5>
+                                                    <h5 class="text-white-50">KES 100.00</h5>
                                                 </div>
-                                            </div>
-                                            <div>
-                                                <div class="dropdown d-inline-block">
-                                                    <button type="button" class="btn header-item h-auto px-4 waves-effect d-flex justify-content-center align-items-center pb-4 pt-4 pr-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <span class="d-none d-xl-inline-block ms-1 prof-name text-left mr-3 pe-4">
-                                                            <span class="text-primary">Filter By Transaction</span>
-                                                            <h5 class="mb-0 pb-0 text-black text-capitalize">All Transactions</h5>
-                                                        </span>
-                                                        <i class="mdi mdi-chevron-down d-xl-inline-block font-size-20 pl-4 pr-4"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu dropdown-menu-end w-100 text-capitalize" >
-                                                        <a class="dropdown-item" href="javascript: void(0);"><span>Mpesa</span></a>
-                                                        <a class="dropdown-item" href="javascript: void(0);"><span>Cash</span></a>
-                                                        <a class="dropdown-item active" href="javascript: void(0);"><span>Split</span></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="dropdown d-inline-block">
-                                                    <button type="button"class="btn header-item h-auto px-4 waves-effect d-flex justify-content-center align-items-center pb-4 pt-4 pr-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <span class="d-none d-xl-inline-block ms-1 prof-name text-left mr-3 pe-4">
-                                                            <span class="text-primary">Filter By Client</span>
-                                                            <h5 class="mb-0 pb-0 text-black">Andrew Mwangi</h5>
-                                                        </span>
-                                                        <i class="mdi mdi-chevron-down d-xl-inline-block font-size-20 pl-4 pr-4"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu dropdown-menu-end w-100 text-capitalize">
-                                                        <a class="dropdown-item active" href="javascript: void(0);"><span>All Clients</span></a>
-                                                        <a class="dropdown-item" href="javascript: void(0);"><span>Simiren Nkere</span></a>
-                                                        <a class="dropdown-item" href="javascript: void(0);"><span>John Mwangi</span></a>
-                                                        <a class="dropdown-item" href="javascript: void(0);"><span>Joy Mwaura</span></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="dropdown d-inline-block"><button type="button"
-                                                        class="btn header-item h-auto px-4 waves-effect d-flex justify-content-center align-items-center pb-4 pt-4 pr-0"
-                                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="reportrange"><span
-                                                            class="d-none d-xl-inline-block ms-1 prof-name text-left mr-3 pe-4"><span
-                                                                class="text-primary">Filter By Date</span>
-                                                            <h5 class="mb-0 pb-0 text-black selected-date">Feb 15, 2023 - Mar 16, 2023</h5>
-                                                        </span><i class="mdi mdi-chevron-down d-xl-inline-block font-size-20 pl-4 pr-4"></i></button></div>
                                             </div>
                                         </div>
-                                        <div class="text-right text-uppercase pr-4"><button type="button"
-                                                class="btn btn-outline-white waves-effect waves-light text-uppercase"><i
-                                                    class="mdi mdi-refresh font-size-24 align-middle me-2"></i> Reset Filters</button></div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table id="datatable-buttons" class="table table-hover">
-                                            <thead class="table-dark text-capitalize">
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Receipt No.</th>
-                                                    <th>Client</th>
-                                                    <th>Items</th>
-                                                    <th class="">Payment Method</th>
-                                                    <th>Date</th>
-                                                    <th>Served By</th>
-                                                    <th class="text-right">Amount</th>
-                                                    <th></th>
-                                                    
-                                                    
-                                                </tr>
-                                            </thead>
-                                            <tfoot class="table-light">
-                                                <tr>
-                                                    <th colspan="2">5 Receipts</th>
-                                                    <th>4 Customers</th>
-                                                    <th colspan="">12 Products</th>
-                                                    <td colspan="2" class="text-uppercase">
-                                                        <span class="pr-2">Cash <span class="fw-semibold">7,900(18%)</span></span>
-                                                        <span>Mpesa <span class="fw-semibold">60,000(82%)</span></span>
-                                                    </td>
-                                                    <th>2 Cashiers</th>
-                                                    <th class="text-right text-uppercase">
-                                                        kes 67,900
-                                                    </th>
-                                                    <th></th>
-                                                  </tr>
-                                            </tfoot>
-    
-    
-                                            <tbody class="table-sm">
-                                              <tr>
-                                                <th>1.</th>
-                                                <td>
-                                                    <span class="fw-semibold text-uppercase">gtuy5678</span>
-                                                </td>
-                                                <td class="">ALex Wanjala</td>
-                                                <td class="">French Fries, Samosa, Manda ...</td>
-                                                <td class="">
-                                                    <span class="badge rounded-pill badge-soft-success text-uppercase">MPESA</span>
-                                                </td>
-                                                <td class="">
-                                                    Mar 16 2023 At 2:48 PM
-                                                </td>
-                                                <td>
-                                                    <a href="user-details.html">Klevin Njuguna</a>
-                                                </td>
-                                                <td class="text-right">
-                                                    <span class="fw-semibold text-uppercase">KES 610</span>
-                                                </td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <a class="text-muted font-size-16" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </a>
-
-                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#transaction-details"><i class="font-size-15 mdi mdi-eye-plus-outline me-3"></i>Detailed view</a>
-                                                            <a class="dropdown-item" href="#"><i class="font-size-15 mdi mdi-printer me-3"></i>Print Receipt</a>
-                                                            <a class="dropdown-item d-none" href="user-details.html"><i class="font-size-15 mdi mdi-calculator me-3"></i>Cashier Details</a>
-                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#customer-details"><i class="font-size-15 mdi mdi-account me-3"></i>Customer Details</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <th>2.</th>
-                                                <td>
-                                                    <span class="fw-semibold text-uppercase">gtuy5678</span>
-                                                </td>
-                                                <td class="">ALex Wanjala</td>
-                                                <td class="">French Fries, Samosa, Manda ...</td>
-                                                <td class="">
-                                                    <span class="badge rounded-pill badge-soft-success text-uppercase">MPESA</span>
-                                                </td>
-                                                <td class="">
-                                                    Mar 16 2023 At 2:48 PM
-                                                </td>
-                                                <td>
-                                                    <a href="user-details.html">Klevin Njuguna</a>
-                                                </td>
-                                                <td class="text-right">
-                                                    <span class="fw-semibold text-uppercase">KES 610</span>
-                                                </td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <a class="text-muted font-size-16" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </a>
-
-                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#transaction-details"><i class="font-size-15 mdi mdi-eye-plus-outline me-3"></i>Detailed view</a>
-                                                            <a class="dropdown-item" href="#"><i class="font-size-15 mdi mdi-printer me-3"></i>Print Receipt</a>
-                                                            <a class="dropdown-item d-none" href="user-details.html"><i class="font-size-15 mdi mdi-calculator me-3"></i>Cashier Details</a>
-                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#customer-details"><i class="font-size-15 mdi mdi-account me-3"></i>Customer Details</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <th>3.</th>
-                                                <td>
-                                                    <span class="fw-semibold text-uppercase">gtuy5678</span>
-                                                </td>
-                                                <td class="">ALex Wanjala</td>
-                                                <td class="">French Fries, Samosa, Manda ...</td>
-                                                <td class="">
-                                                    <span class="badge rounded-pill badge-soft-success text-uppercase">MPESA</span>
-                                                </td>
-                                                <td class="">
-                                                    Mar 16 2023 At 2:48 PM
-                                                </td>
-                                                <td>
-                                                    <a href="user-details.html">Klevin Njuguna</a>
-                                                </td>
-                                                <td class="text-right">
-                                                    <span class="fw-semibold text-uppercase">KES 610</span>
-                                                </td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <a class="text-muted font-size-16" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </a>
-
-                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#transaction-details"><i class="font-size-15 mdi mdi-eye-plus-outline me-3"></i>Detailed view</a>
-                                                            <a class="dropdown-item" href="#"><i class="font-size-15 mdi mdi-printer me-3"></i>Print Receipt</a>
-                                                            <a class="dropdown-item d-none" href="user-details.html"><i class="font-size-15 mdi mdi-calculator me-3"></i>Cashier Details</a>
-                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#customer-details"><i class="font-size-15 mdi mdi-account me-3"></i>Customer Details</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <th>4.</th>
-                                                <td>
-                                                    <span class="fw-semibold text-uppercase">gtuy5678</span>
-                                                </td>
-                                                <td class="">ALex Wanjala</td>
-                                                <td class="">French Fries, Samosa, Manda ...</td>
-                                                <td class="">
-                                                    <span class="badge rounded-pill badge-soft-success text-uppercase">MPESA</span>
-                                                </td>
-                                                <td class="">
-                                                    Mar 16 2023 At 2:48 PM
-                                                </td>
-                                                <td>
-                                                    <a href="user-details.html">Klevin Njuguna</a>
-                                                </td>
-                                                <td class="text-right">
-                                                    <span class="fw-semibold text-uppercase">KES 610</span>
-                                                </td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <a class="text-muted font-size-16" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </a>
-
-                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#transaction-details"><i class="font-size-15 mdi mdi-eye-plus-outline me-3"></i>Detailed view</a>
-                                                            <a class="dropdown-item" href="#"><i class="font-size-15 mdi mdi-printer me-3"></i>Print Receipt</a>
-                                                            <a class="dropdown-item d-none" href="user-details.html"><i class="font-size-15 mdi mdi-calculator me-3"></i>Cashier Details</a>
-                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#customer-details"><i class="font-size-15 mdi mdi-account me-3"></i>Customer Details</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <th>5.</th>
-                                                <td>
-                                                    <span class="fw-semibold text-uppercase">gtuy5678</span>
-                                                </td>
-                                                <td class="">ALex Wanjala</td>
-                                                <td class="">French Fries, Samosa, Manda ...</td>
-                                                <td class="">
-                                                    <span class="badge rounded-pill badge-soft-success text-uppercase">MPESA</span>
-                                                    <span class="badge rounded-pill badge-soft-dark text-uppercase">cash</span>
-                                                </td>
-                                                <td class="">
-                                                    Mar 16 2023 At 2:48 PM
-                                                </td>
-                                                <td>
-                                                    <a href="user-details.html">Klevin Njuguna</a>
-                                                </td>
-                                                <td class="text-right">
-                                                    <span class="fw-semibold text-uppercase">KES 610</span>
-                                                </td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <a class="text-muted font-size-16" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </a>
-
-                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#transaction-details"><i class="font-size-15 mdi mdi-eye-plus-outline me-3"></i>Detailed view</a>
-                                                            <a class="dropdown-item" href="#"><i class="font-size-15 mdi mdi-printer me-3"></i>Print Receipt</a>
-                                                            <a class="dropdown-item d-none" href="user-details.html"><i class="font-size-15 mdi mdi-calculator me-3"></i>Cashier Details</a>
-                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#customer-details"><i class="font-size-15 mdi mdi-account me-3"></i>Customer Details</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                              </tr>
-                                            
-                                            </tbody>
-                                        </table>
+                                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                                            <div class="card dark-card waves-effect w-100">
+                                                <div class="card-body">
+                                                    <small class="text-uppercase text-white opacity-50">Snacks</small>
+                                                    <h5 class="mb-4 text-white">French Fries</h5>
+                                                    <h5 class="text-white-50">KES 100.00</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                                            <div class="card dark-card waves-effect w-100">
+                                                <div class="card-body">
+                                                    <small class="text-uppercase text-white opacity-50">Snacks</small>
+                                                    <h5 class="mb-4 text-white">French Fries</h5>
+                                                    <h5 class="text-white-50">KES 100.00</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                                            <div class="card dark-card waves-effect w-100">
+                                                <div class="card-body">
+                                                    <small class="text-uppercase text-white opacity-50">Snacks</small>
+                                                    <h5 class="mb-4 text-white">French Fries</h5>
+                                                    <h5 class="text-white-50">KES 100.00</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                                            <div class="card dark-card waves-effect w-100">
+                                                <div class="card-body">
+                                                    <small class="text-uppercase text-white opacity-50">Snacks</small>
+                                                    <h5 class="mb-4 text-white">French Fries</h5>
+                                                    <h5 class="text-white-50">KES 100.00</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                                            <div class="card dark-card waves-effect w-100">
+                                                <div class="card-body">
+                                                    <small class="text-uppercase text-white opacity-50">Snacks</small>
+                                                    <h5 class="mb-4 text-white">French Fries</h5>
+                                                    <h5 class="text-white-50">KES 100.00</h5>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- end col -->
+
+                        <div class="col-sm-12 col-md-5 col-lg-4 d-sm-none d-md-block">
+                            <div class="card menu-slip-checkout">
+                                <div class="card-body d-flex">
+                                    <div class="empty-cart h-100 w-100 d-flex justify-content-center align-items-center flex-column">
+                                        <h1 class="mdi mdi-basket-off-outline"></h1>
+                                        <h5 class="text-capitalize">No items selected</h5>
+                                    </div>
+
+                                </div>
+                                <div class="card-footer text-uppercase">
+                                    <div class="the-slip-btns d-flex mb-3">
+                                        <button type="button" disabled class="btn btn-light disabled waves-effect text-uppercase btn-rounded flex-grow-1 px-3 ">Cash</button>
+                                        <button type="button" disabled class="btn btn-light disabled waves-effect text-uppercase btn-rounded flex-grow-1 px-3 mx-2">MPESA</button>
+                                        <button type="button" disabled class="btn btn-light disabled waves-effect text-uppercase btn-rounded flex-grow-1 px-3 me-2">Split</button>
+                                        <button type="button" disabled class="btn btn-light disabled waves-effect text-uppercase btn-rounded flex-grow-1 px-3">BILL</button>
+                                    </div>
+                                    <div class="d-flex mb-3">
+                                        <button type="button" disabled class="btn me-2 btn-primary disabled waves-effect waves-light flex-grow-1 text-uppercase mr-2">
+                                            <i class="bx bx-check-double font-size-16 align-middle me-3"></i> Place Order
+                                        </button>
+                                        <button type="button" disabled class="btn btn-outline-light disabled waves-effect text-uppercase">
+                                            <i class="bx bx-trash font-size-16 align-middle me-2"></i> Clear
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- end row -->
@@ -739,80 +562,6 @@
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
-
-            <!-- Transaction Modal -->
-            <div class="modal fade transaction-detailModal" tabindex="-1" role="dialog" aria-labelledby="transaction-detailModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="transaction-detailModalLabel">Transactions Details</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-
-
-                            <div class="table-responsive mt-4">
-                                <table class="table align-middle table-nowrap">
-                                    <tbody>
-                                        <tr>
-                                            <td style="width: 30%">
-                                                <p class="mb-0">Car Plate Number</p>
-                                            </td>
-                                            <td style="width: 25%">
-                                                <h5 class="mb-0 text-uppercase">UAG 1235p</h5>
-                                            </td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <p class="mb-0">Vehicle Category</p>
-                                            </td>
-                                            <td>
-                                                <h5 class="mb-0">Salon Car</h5>
-                                            </td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <p class="mb-0">Payment Date</p>
-                                            </td>
-                                            <td>
-                                                <h5 class="mb-0">22 Apr 2022 06:54PM</h5>
-                                            </td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <p class="mb-0">San Diego</p>
-                                            </td>
-                                            <td>
-                                                <h5 class="mb-0">1,026</h5>
-                                            </td>
-
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <p class="mb-0 pb-0">Amount Paid</p>
-                                                <h3>UGX 2,000</h3>
-                                            </td>
-                                        </tr>
-                                        <TR>
-                                            <td col-span="2">
-                                                <p class="mb-2">Attended By<span class="text-primary"> Alex Sebeye</span></p>
-                                                <p class="mb-4">Toll taker's No. <span class="text-primary">0704549859</span></p>
-                                            </td>
-                                        </TR>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end modal -->
 
             <!-- filter right of canvus -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="dt__filter" aria-labelledby="offcanvasRightLabel">
@@ -915,7 +664,7 @@
 
 
 
-            <footer class="footer ">
+            <footer class="footer d-none">
                 <div class="container-fluid ">
                     <div class="row ">
                         <div class="col-sm-6 ">
