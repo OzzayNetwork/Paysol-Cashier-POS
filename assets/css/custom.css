@@ -1388,7 +1388,7 @@
                 border-collapse: separate;
                 border-spacing: 0 10px;
               }
-              .menu-slip-checkout .card-body:hover{
+              .menu-slip-checkout .card-body{
                 overflow-y: scroll;
               }
 

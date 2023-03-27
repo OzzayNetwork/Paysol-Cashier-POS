@@ -175,6 +175,12 @@ $(document).ready(function(){
 // the scripts for the pos index section
 $(document).ready(function(){
 
+    $.fn.digits = function(){ 
+        return this.each(function(){ 
+            $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
+        })
+    }
+
     
     $("body").on('dblclick','.menu-item', function(){
         $("#the-calculator").modal('show')
@@ -183,7 +189,6 @@ $(document).ready(function(){
    
 
     $("body").on('click','.menu-item', function(){
-        $(this).addClass("selected-item") 
         $('.empty-cart').addClass("d-none") 
         $('.menu-slip-checkout .card-header').removeClass("d-none")
         $('.total-container').removeClass("d-none")  
@@ -191,7 +196,79 @@ $(document).ready(function(){
         
         $(".menu-slip-checkout .card-footer button").each(function(index) {
            $(this).removeClass('disabled').prop('disabled', false);
-        });        
+        });  
+        
+        // getting the clicked item details
+       var itemName=$(this).find('.menu-item-name').text()
+       var itemPrice=$(this).find('.menu-item-amount').text()
+       var theNumberOfItems=parseFloat($('.menu-checkout-items').find("tbody").find("tr").length)
+       var clickedIndex=$(this).parent().index()
+       var classToFind="selected-item-index"+clickedIndex
+    //    alert(clickedIndex)
+       if ($(this).hasClass("selected-item")) {
+            var itemQty=parseFloat($(".menu-checkout-items tbody").find("."+classToFind).find(".qty-count-txt").text())
+            //var totalItemPrice=parseFloat($(".menu-checkout-items tbody").find("."+classToFind).find(".checkout-item-price").text())
+            $(".menu-checkout-items tbody").find("."+classToFind).find(".qty-count-txt").text(itemQty+1);
+            $(".menu-checkout-items tbody").find("."+classToFind).find(".checkout-item-price").text(((itemQty+1)*itemPrice).toLocaleString("en")+".00");
+            $('.add-qty').find('span').click()
+        }
+        else{
+            $('.menu-checkout-items tbody').append(`
+            <tr class="selected-item-index`+clickedIndex+`">
+                 <td class="checkout-num-cont">
+                     <span class="pl-2 checkout-num">`+(theNumberOfItems+1)+`.</span>
+                     <div class="the-item-index d-none">`+clickedIndex+`</div>
+                 </td>
+                 <td class="checkout-item-name">`
+                     +itemName+
+                     
+                 `</td>
+                 <td>
+                     <div class="d-flex">
+                         <a href="javascript: void(0);" class="d-inline-block minus-qty">
+                             <div class="avatar-xs">
+                                 <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
+                                     <i class="bx bx-minus"></i>
+                                 </span>
+                             </div>
+                         </a>
+     
+                         <a href="javascript: void(0);" class="d-inline-block mx-2 qty-count">
+                             <div class="avatar-xs">
+                                 <span class="avatar-title rounded-circle bg-secondary bg-soft text-white qty-count-txt">
+                                     1
+                                 </span>
+                             </div>
+                         </a>
+     
+                         <a href="javascript: void(0);" class="d-inline-block add-qty">
+                             <div class="avatar-xs">
+                                 <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
+                                     <i class="bx bx-plus"></i>
+                                 </span>
+                             </div>
+                         </a>
+                     </div>
+                 </td>
+                 <td class="text-right">KES <span class="checkout-item-price">`
+                     +itemPrice+
+                 `</span></td>
+                 <td>
+                     <a href="javascript: void(0);" class="d-inline-block remove-checkout-item">
+                         <div class="avatar-xs">
+                             <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
+                                 <i class="bx bx-x"></i>
+                             </span>
+                         </div>
+                     </a>
+                 </td>
+            </tr>
+            `)
+        }
+
+        $(this).addClass("selected-item")
+
+      
     })
 
 
@@ -200,11 +277,19 @@ $(document).ready(function(){
     })
 
     $("body").on("click",'.remove-checkout-item', function(){
+        var theMenuItem=parseFloat($(this).parent().parent().find('.the-item-index').text())
+        //alert(theMenuItem)
+        $('.menu-items-options-cont>div').eq(theMenuItem).find('.menu-item').removeClass('selected-item')
         var theIndex=parseFloat($(this).parent().siblings('.checkout-num-cont').children('span').text())
-        alert(theIndex)
+        var theNumberOfItems=$('.menu-checkout-items').find("tbody").find("tr").length
+        // alert(theIndex)
         $(this).parent().parent().remove()
 
-        if(theIndex==1){
+        $(".menu-checkout-items tbody tr").each(function(index) {
+            $(this).find('.checkout-num').text(index+1)
+         });  
+
+        if(theNumberOfItems==1){
             $(".menu-slip-checkout .card-footer button").each(function(index) {
                 $(this).addClass('disabled').prop('disabled', true); 
              });  
