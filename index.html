@@ -482,57 +482,49 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="row menu-items-options-cont">
+                                        
                                         <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                                            <div class="card dark-card waves-effect w-100"  data-bs-toggle="modal" data-bs-target="#the-calculator">
+                                            <div class="card dark-card waves-effect w-100 menu-item">
                                                 <div class="card-body">
                                                     <small class="text-uppercase text-white opacity-50">Snacks</small>
-                                                    <h5 class="mb-4 text-white">French Fries</h5>
-                                                    <h5 class="text-white-50">KES 100.00</h5>
+                                                    <h5 class="mb-4 text-white menu-item-name">French Fries</h5>
+                                                    <h5 class="text-white-50 menu-item-amount">KES 100.00</h5>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                                            <div class="card dark-card waves-effect w-100">
+                                            <div class="card dark-card waves-effect w-100 menu-item">
                                                 <div class="card-body">
                                                     <small class="text-uppercase text-white opacity-50">Snacks</small>
-                                                    <h5 class="mb-4 text-white">French Fries</h5>
-                                                    <h5 class="text-white-50">KES 100.00</h5>
+                                                    <h5 class="mb-4 text-white menu-item-name">Samosa</h5>
+                                                    <h5 class="text-white-50 menu-item-amount">KES 30.00</h5>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                                            <div class="card dark-card waves-effect w-100">
+                                            <div class="card dark-card waves-effect w-100 menu-item">
                                                 <div class="card-body">
                                                     <small class="text-uppercase text-white opacity-50">Snacks</small>
-                                                    <h5 class="mb-4 text-white">French Fries</h5>
-                                                    <h5 class="text-white-50">KES 100.00</h5>
+                                                    <h5 class="mb-4 text-white menu-item-name">Sausages</h5>
+                                                    <h5 class="text-white-50 menu-item-amount">KES 35.00</h5>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                                            <div class="card dark-card waves-effect w-100">
+                                            <div class="card dark-card waves-effect w-100 menu-item">
                                                 <div class="card-body">
                                                     <small class="text-uppercase text-white opacity-50">Snacks</small>
-                                                    <h5 class="mb-4 text-white">French Fries</h5>
-                                                    <h5 class="text-white-50">KES 100.00</h5>
+                                                    <h5 class="mb-4 text-white menu-item-name">Smokie</h5>
+                                                    <h5 class="text-white-50 menu-item-amount">KES 25.00</h5>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                                            <div class="card dark-card waves-effect w-100">
+                                            <div class="card dark-card waves-effect w-100 menu-item">
                                                 <div class="card-body">
                                                     <small class="text-uppercase text-white opacity-50">Snacks</small>
-                                                    <h5 class="mb-4 text-white">French Fries</h5>
-                                                    <h5 class="text-white-50">KES 100.00</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                                            <div class="card dark-card waves-effect w-100">
-                                                <div class="card-body">
-                                                    <small class="text-uppercase text-white opacity-50">Snacks</small>
-                                                    <h5 class="mb-4 text-white">French Fries</h5>
-                                                    <h5 class="text-white-50">KES 100.00</h5>
+                                                    <h5 class="mb-4 text-white menu-item-name">Boilled Eggs</h5>
+                                                    <h5 class="text-white-50 menu-item-amount">KES 25.00</h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -543,7 +535,7 @@
 
                         <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4 d-sm-none d-md-block">
                             <div class="card menu-slip-checkout">
-                                <div class="card-header border-1">
+                                <div class="card-header border-1 d-none">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <h4 class="card-title mr-3 mb-0 fw-medium text-white opacity-75">Order Details <span class="text-uppercase d-none">123456tyu</span></h4>
                                         <button type="button" class="btn btn-sm btn-primary waves-effect waves-light">
@@ -553,15 +545,14 @@
                                     
                                 </div>
                                 <div class="card-body d-flex flex-column ">
-                                    <div class="menu-checkout-items w-100">
-                                        
+                                    <div class="menu-checkout-items w-100 d-none">
                                         <table class="table w-100 text-white table-borderless table-sm">
                                             <tbody>
                                                 <tr>
-                                                    <td>
-                                                        <span class="pl-2">1.</span>
+                                                    <td class="checkout-num-cont">
+                                                        <span class="pl-2 checkout-num">1.</span>
                                                     </td>
-                                                    <td>
+                                                    <td class="checkout-item-name">
                                                         French Fries
                                                     </td>
                                                     <td>
@@ -591,11 +582,11 @@
                                                             </a>
                                                         </div>
                                                     </td>
-                                                    <td class="text-right">
+                                                    <td class="text-right checkout-item-price">
                                                         KES 100.00
                                                     </td>
                                                     <td>
-                                                        <a href="javascript: void(0);" class="d-inline-block">
+                                                        <a href="javascript: void(0);" class="d-inline-block remove-checkout-item">
                                                             <div class="avatar-xs">
                                                                 <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
                                                                    <i class="bx bx-x"></i>
@@ -604,31 +595,30 @@
                                                         </a>
                                                     </td>
                                                 </tr>
-
                                                 <tr>
-                                                    <td>
-                                                        <span class="pl-2">2.</span>
+                                                    <td class="checkout-num-cont">
+                                                        <span class="pl-2 checkout-num">2.</span>
                                                     </td>
-                                                    <td>
+                                                    <td class="checkout-item-name">
                                                         French Fries
                                                     </td>
                                                     <td>
                                                         <div class="d-flex">
                                                             <a href="javascript: void(0);" class="d-inline-block ">
                                                                 <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white waves-effect">
+                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
+                                                                       <i class="bx bx-minus"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+    
+                                                            <a href="javascript: void(0);" class="d-inline-block mx-2">
+                                                                <div class="avatar-xs">
+                                                                    <span class="avatar-title rounded-circle bg-secondary bg-soft text-white">
                                                                        1
                                                                     </span>
                                                                 </div>
                                                             </a>
-    
-                                                            <a href="javascript: void(0);" class="d-inline-block mx-2">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-secondary bg-soft text-white font-size-16">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
 
                                                             <a href="javascript: void(0);" class="d-inline-block">
                                                                 <div class="avatar-xs">
@@ -639,11 +629,11 @@
                                                             </a>
                                                         </div>
                                                     </td>
-                                                    <td class="text-right">
+                                                    <td class="text-right checkout-item-price">
                                                         KES 100.00
                                                     </td>
                                                     <td>
-                                                        <a href="javascript: void(0);" class="d-inline-block">
+                                                        <a href="javascript: void(0);" class="d-inline-block remove-checkout-item">
                                                             <div class="avatar-xs">
                                                                 <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
                                                                    <i class="bx bx-x"></i>
@@ -653,394 +643,19 @@
                                                     </td>
                                                 </tr>
 
-                                                <tr>
-                                                    <td>
-                                                        <span class="pl-2">3.</span>
-                                                    </td>
-                                                    <td>
-                                                        French Fries
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <a href="javascript: void(0);" class="d-inline-block ">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-    
-                                                            <a href="javascript: void(0);" class="d-inline-block mx-2">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-secondary bg-soft text-white font-size-16">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-
-                                                            <a href="javascript: void(0);" class="d-inline-block">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-plus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        KES 100.00
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript: void(0);" class="d-inline-block">
-                                                            <div class="avatar-xs">
-                                                                <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                   <i class="bx bx-x"></i>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <span class="pl-2">4.</span>
-                                                    </td>
-                                                    <td>
-                                                        French Fries
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <a href="javascript: void(0);" class="d-inline-block ">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-    
-                                                            <a href="javascript: void(0);" class="d-inline-block mx-2">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-secondary bg-soft text-white font-size-16">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-
-                                                            <a href="javascript: void(0);" class="d-inline-block">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-plus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        KES 100.00
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript: void(0);" class="d-inline-block">
-                                                            <div class="avatar-xs">
-                                                                <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                   <i class="bx bx-x"></i>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span class="pl-2">4.</span>
-                                                    </td>
-                                                    <td>
-                                                        French Fries
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <a href="javascript: void(0);" class="d-inline-block ">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-    
-                                                            <a href="javascript: void(0);" class="d-inline-block mx-2">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-secondary bg-soft text-white font-size-16">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-
-                                                            <a href="javascript: void(0);" class="d-inline-block">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-plus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        KES 100.00
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript: void(0);" class="d-inline-block">
-                                                            <div class="avatar-xs">
-                                                                <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                   <i class="bx bx-x"></i>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span class="pl-2">4.</span>
-                                                    </td>
-                                                    <td>
-                                                        French Fries
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <a href="javascript: void(0);" class="d-inline-block ">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-    
-                                                            <a href="javascript: void(0);" class="d-inline-block mx-2">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-secondary bg-soft text-white font-size-16">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-
-                                                            <a href="javascript: void(0);" class="d-inline-block">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-plus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        KES 100.00
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript: void(0);" class="d-inline-block">
-                                                            <div class="avatar-xs">
-                                                                <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                   <i class="bx bx-x"></i>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span class="pl-2">4.</span>
-                                                    </td>
-                                                    <td>
-                                                        French Fries
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <a href="javascript: void(0);" class="d-inline-block ">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-    
-                                                            <a href="javascript: void(0);" class="d-inline-block mx-2">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-secondary bg-soft text-white font-size-16">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-
-                                                            <a href="javascript: void(0);" class="d-inline-block">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-plus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        KES 100.00
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript: void(0);" class="d-inline-block">
-                                                            <div class="avatar-xs">
-                                                                <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                   <i class="bx bx-x"></i>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span class="pl-2">4.</span>
-                                                    </td>
-                                                    <td>
-                                                        French Fries
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <a href="javascript: void(0);" class="d-inline-block ">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-    
-                                                            <a href="javascript: void(0);" class="d-inline-block mx-2">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-secondary bg-soft text-white font-size-16">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-
-                                                            <a href="javascript: void(0);" class="d-inline-block">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-plus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        KES 100.00
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript: void(0);" class="d-inline-block">
-                                                            <div class="avatar-xs">
-                                                                <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                   <i class="bx bx-x"></i>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span class="pl-2">4.</span>
-                                                    </td>
-                                                    <td>
-                                                        French Fries
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <a href="javascript: void(0);" class="d-inline-block ">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-    
-                                                            <a href="javascript: void(0);" class="d-inline-block mx-2">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-secondary bg-soft text-white font-size-16">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-
-                                                            <a href="javascript: void(0);" class="d-inline-block">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-plus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        KES 100.00
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript: void(0);" class="d-inline-block">
-                                                            <div class="avatar-xs">
-                                                                <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                   <i class="bx bx-x"></i>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span class="pl-2">4.</span>
-                                                    </td>
-                                                    <td>
-                                                        French Fries
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <a href="javascript: void(0);" class="d-inline-block ">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-    
-                                                            <a href="javascript: void(0);" class="d-inline-block mx-2">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-secondary bg-soft text-white font-size-16">
-                                                                       <i class="bx bx-minus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-
-                                                            <a href="javascript: void(0);" class="d-inline-block">
-                                                                <div class="avatar-xs">
-                                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                       <i class="bx bx-plus"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        KES 100.00
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript: void(0);" class="d-inline-block">
-                                                            <div class="avatar-xs">
-                                                                <span class="avatar-title rounded-circle bg-dark bg-soft text-white font-size-16 waves-effect">
-                                                                   <i class="bx bx-x"></i>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </td>
-                                                </tr>
+                                               
+                                                
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="empty-cart h-100 w-100 d-flex justify-content-center align-items-center flex-column d-none">
+                                    <div class="empty-cart h-100 w-100 d-flex justify-content-center align-items-center flex-column">
                                         <img src="assets/images/empty-cart.svg" alt="" class="img mb-3 empty-cart">
                                         <h5 class="text-capitalize">No items selected</h5>
                                     </div>
 
                                 </div>
                                 <div class="card-footer text-uppercase w-100 pt-4 ">
-                                    <div class="mb-3 w-100 total-container pb-1">
+                                    <div class="mb-3 w-100 total-container pb-1 d-none">
                                         <table class="table table-sm table-borderless text-white text-uppercase">
                                             <tbody>
                                                 <tr>
@@ -1061,23 +676,7 @@
                                         </table>
                                     </div>
 
-                                    <div class="mb-3 d-flex d-none total-container text-uppercase w-100 flex-column py-3">
-                                        <h6 class="d-flex justify-content-between text-white opacity-75 mb-4">
-                                            <span class="pr-15px">SUBTOTAL</span>
-                                            <span class="text-right">kes 100</span>
-                                        </h6>
-                                        <h6 class="d-flex justify-content-between text-white opacity-75 mb-">
-                                            <span class="pr-15px">Discount</span>
-                                            <span class="text-right">kes 0</span>
-                                        </h6>
-                                        <h6 class="mb-0">
-                                            <hr class="my-2">
-                                        </h6>
-                                        <h5 class="text-white d-flex justify-content-between text-white mb-0">
-                                            <span class="pr-15px">Total</span>
-                                            <span class="text-right">kes 100</span>
-                                        </h5>
-                                    </div>
+                                   
                                     <div class="the-slip-btns d-flex mb-3">
                                         <button type="button" disabled class="btn btn-light disabled waves-effect text-uppercase btn-rounded flex-grow-1 px-3 ">Cash</button>
                                         <button type="button" disabled class="btn btn-light disabled waves-effect text-uppercase btn-rounded flex-grow-1 px-3 mx-2">MPESA</button>

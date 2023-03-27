@@ -75,6 +75,8 @@ $(window).on('load', function() {
         $('.select-week').removeClass('d-none')
     })
 
+
+
 });
 
 $(document).ready(function(){
@@ -169,4 +171,57 @@ $(document).ready(function(){
         getDate();
       };
 })
+
+// the scripts for the pos index section
+$(document).ready(function(){
+
+    
+    $("body").on('dblclick','.menu-item', function(){
+        $("#the-calculator").modal('show')
+        // alert("double clicked").dblclick()
+    })
+   
+
+    $("body").on('click','.menu-item', function(){
+        $(this).addClass("selected-item") 
+        $('.empty-cart').addClass("d-none") 
+        $('.menu-slip-checkout .card-header').removeClass("d-none")
+        $('.total-container').removeClass("d-none")  
+        $('.menu-checkout-items').removeClass('d-none')  
+        
+        $(".menu-slip-checkout .card-footer button").each(function(index) {
+           $(this).removeClass('disabled').prop('disabled', false);
+        });        
+    })
+
+
+    $("body").on('click','.the-slip-btns button',function(){
+        $(this).addClass("active").siblings().removeClass("active")
+    })
+
+    $("body").on("click",'.remove-checkout-item', function(){
+        var theIndex=parseFloat($(this).parent().siblings('.checkout-num-cont').children('span').text())
+        alert(theIndex)
+        $(this).parent().parent().remove()
+
+        if(theIndex==1){
+            $(".menu-slip-checkout .card-footer button").each(function(index) {
+                $(this).addClass('disabled').prop('disabled', true); 
+             });  
+             
+        
+        $('.empty-cart').removeClass("d-none") 
+        $('.menu-slip-checkout .card-header').addClass("d-none")
+        $('.total-container').addClass("d-none")  
+        $('.menu-checkout-items').addClass('d-none') 
+        $(".menu-item").each(function(index) {
+            $(this).removeClass('selected-item')
+         }); 
+ 
+        }
+
+      
+    })
+})
+// end of the pos scripts section
 
