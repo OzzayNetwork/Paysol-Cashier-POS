@@ -213,6 +213,64 @@ $(document).ready(function(){
         })
     }
 
+    $("body").on('click','.add-qty', function(){
+       var itemQuantity=parseFloat($(this).siblings('.qty-count').find('span').text())
+       itemQuantity=itemQuantity+1
+
+       $(this).siblings('.qty-count').find('.qty-count-txt').text(itemQuantity)
+
+       var theMenuItem=parseFloat($(this).parent().parent().parent().find('.the-item-index').text())
+        var itemPrice=$('.menu-items-options-cont>div').eq(theMenuItem).find('.menu-item').find('.menu-item-amount').text()
+        $(this).parent().parent().parent().find('.checkout-item-price').text(itemPrice*itemQuantity+".00")
+
+       gettingOrderTot()
+        gettingNumOfItems()    
+       
+    })
+
+    $("body").on('click','.minus-qty', function(){
+        var itemQuantity=parseFloat($(this).siblings('.qty-count').find('span').text())
+        
+        
+        if(itemQuantity==1){
+            var theMenuItem=parseFloat($(this).parent().parent().parent().find('.the-item-index').text())
+            $('.menu-items-options-cont>div').eq(theMenuItem).find('.menu-item').removeClass('selected-item')
+            var theIndex=parseFloat($(this).parent().siblings('.checkout-num-cont').children('span').text())
+            var theNumberOfItems=$('.menu-checkout-items').find("tbody").find("tr").length
+            // alert(theIndex)
+            $(this).parent().parent().parent().remove()
+
+            $(".menu-checkout-items tbody tr").each(function(index) {
+                $(this).find('.checkout-num').text(index+1)
+            });  
+
+            if(theNumberOfItems==1){
+                $(".menu-slip-checkout .card-footer button").each(function(index) {
+                    $(this).addClass('disabled').prop('disabled', true); 
+                });  
+                $('.empty-cart').removeClass("d-none") 
+                $('.menu-slip-checkout .card-header').addClass("d-none")
+                $('.total-container').addClass("d-none")  
+                $('.menu-checkout-items').addClass('d-none') 
+                $(".menu-item").each(function(index) {
+                    $(this).removeClass('selected-item')
+                }); 
+            }
+        }
+
+        if(itemQuantity!=1){
+            itemQuantity=itemQuantity-1
+        }
+        
+        $(this).siblings('.qty-count').find('.qty-count-txt').text(itemQuantity)
+        var theMenuItem=parseFloat($(this).parent().parent().parent().find('.the-item-index').text())
+        var itemPrice=$('.menu-items-options-cont>div').eq(theMenuItem).find('.menu-item').find('.menu-item-amount').text()
+        $(this).parent().parent().parent().find('.checkout-item-price').text(itemPrice*itemQuantity+".00")
+        gettingOrderTot()
+        gettingNumOfItems()    
+        
+     })
+
     
     $("body").on('dblclick','.menu-item', function(){
         $("#the-calculator").modal('show')
@@ -220,7 +278,6 @@ $(document).ready(function(){
         gettingOrderTot()
         gettingNumOfItems()
     })
-   
 
     $("body").on('click','.menu-item', function(){
         $('.empty-cart').addClass("d-none") 
@@ -244,7 +301,7 @@ $(document).ready(function(){
             //var totalItemPrice=parseFloat($(".menu-checkout-items tbody").find("."+classToFind).find(".checkout-item-price").text())
             $(".menu-checkout-items tbody").find("."+classToFind).find(".qty-count-txt").text(itemQty+1);
             $(".menu-checkout-items tbody").find("."+classToFind).find(".checkout-item-price").text(((itemQty+1)*itemPrice).toLocaleString("en")+".00");
-            $('.add-qty').find('span').click()
+            // $('.add-qty').find('span').click()
         }
         else{
             $('.menu-checkout-items tbody').append(`
@@ -306,9 +363,6 @@ $(document).ready(function(){
 
       
     })
-
-
-
 
     $("body").on('click','.the-slip-btns button',function(){
         $(this).addClass("active").siblings().removeClass("active")

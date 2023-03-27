@@ -1433,6 +1433,7 @@
   .card.card.dark-card.selected-item{
     background: #2D2D2D !important;
     background-color: #2D2D2D !important;
+    border-left: 6px solid #2fb89508;
   }
   .empty-cart h5{
     color: #4f4f4f;
