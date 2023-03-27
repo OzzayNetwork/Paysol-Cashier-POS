@@ -175,6 +175,38 @@ $(document).ready(function(){
 // the scripts for the pos index section
 $(document).ready(function(){
 
+    function removingCommass(amount){
+        amount = parseFloat(amount.replace(/,/g, ''));
+        return amount
+    }
+
+    function gettingOrderTot(){
+        // Getting totals
+        var totalAmount=0
+        $(".menu-checkout-items tbody tr").each(function(index) {
+            var theAmount=removingCommass($(this).find('.checkout-item-price').text())
+            console.log(theAmount)
+            totalAmount=totalAmount+theAmount
+        }); 
+        
+        $(".total-amount").text(addingCommas(totalAmount)+".00") 
+        $(".totAMount").text(addingCommas(totalAmount)+".00") 
+    }
+
+    function gettingNumOfItems(){
+        var menuItems=0
+        $(".menu-checkout-items tbody tr").each(function(index) {
+            var totalItems=parseInt($(this).find('.qty-count-txt').text())
+            menuItems=menuItems+totalItems
+        });
+        $('.total-items').text(menuItems) 
+    }
+
+    function addingCommas(amount){
+        amount=amount.toLocaleString("en")
+        return amount
+    }
+
     $.fn.digits = function(){ 
         return this.each(function(){ 
             $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
@@ -185,6 +217,8 @@ $(document).ready(function(){
     $("body").on('dblclick','.menu-item', function(){
         $("#the-calculator").modal('show')
         // alert("double clicked").dblclick()
+        gettingOrderTot()
+        gettingNumOfItems()
     })
    
 
@@ -200,7 +234,7 @@ $(document).ready(function(){
         
         // getting the clicked item details
        var itemName=$(this).find('.menu-item-name').text()
-       var itemPrice=$(this).find('.menu-item-amount').text()
+       var itemPrice=removingCommass($(this).find('.menu-item-amount').text())
        var theNumberOfItems=parseFloat($('.menu-checkout-items').find("tbody").find("tr").length)
        var clickedIndex=$(this).parent().index()
        var classToFind="selected-item-index"+clickedIndex
@@ -251,8 +285,8 @@ $(document).ready(function(){
                      </div>
                  </td>
                  <td class="text-right">KES <span class="checkout-item-price">`
-                     +itemPrice+
-                 `</span></td>
+                     +addingCommas(itemPrice)+
+                 `.00</span></td>
                  <td>
                      <a href="javascript: void(0);" class="d-inline-block remove-checkout-item">
                          <div class="avatar-xs">
@@ -267,9 +301,13 @@ $(document).ready(function(){
         }
 
         $(this).addClass("selected-item")
+        gettingOrderTot()
+        gettingNumOfItems()
 
       
     })
+
+
 
 
     $("body").on('click','.the-slip-btns button',function(){
@@ -287,14 +325,12 @@ $(document).ready(function(){
 
         $(".menu-checkout-items tbody tr").each(function(index) {
             $(this).find('.checkout-num').text(index+1)
-         });  
+        });  
 
         if(theNumberOfItems==1){
-            $(".menu-slip-checkout .card-footer button").each(function(index) {
-                $(this).addClass('disabled').prop('disabled', true); 
-             });  
-             
-        
+        $(".menu-slip-checkout .card-footer button").each(function(index) {
+            $(this).addClass('disabled').prop('disabled', true); 
+        });  
         $('.empty-cart').removeClass("d-none") 
         $('.menu-slip-checkout .card-header').addClass("d-none")
         $('.total-container').addClass("d-none")  
@@ -302,10 +338,9 @@ $(document).ready(function(){
         $(".menu-item").each(function(index) {
             $(this).removeClass('selected-item')
          }); 
- 
         }
-
-      
+        gettingOrderTot()
+        gettingNumOfItems()       
     })
 })
 // end of the pos scripts section
