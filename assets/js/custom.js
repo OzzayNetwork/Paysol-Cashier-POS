@@ -213,6 +213,100 @@ $(document).ready(function(){
         })
     }
 
+    // calculator start
+    var clickedNumber = document.querySelectorAll('[data-number]'), 
+    resultDisplayed = false,
+    clear = document.querySelectorAll('[data-clear]'),
+    del=document.querySelectorAll('[data-delete]'),
+    changeResults=$('#calc-count'),
+    unitPrice=$('#calc-unit-price').text(),
+    menuItemCounterCont,
+    totalPriceCont,
+    totalPrice,
+    newString
+
+    //adding the characters
+    for (var i = 0; i < clickedNumber.length; i++){
+        clickedNumber[i].addEventListener("click", function(e){
+            unitPrice=$('#calc-unit-price').text()
+           // storing current input string and its last character in variables - used later
+            var currentString = $('#calc-count').text(); 
+            var lastChar = currentString[currentString.length - 1];
+           //alert(resultDisplayed)
+           console.log(clear.html)
+
+            // if result is not diplayed, just keep adding
+            if(resultDisplayed===false){
+                if(currentString=="0"){
+                    currentString=""
+                }                
+                newString=currentString+$(this).text()
+                $('#calc-count').text(newString)
+                $(".calc-count-2").text(newString)
+                
+                totalPrice=parseInt(newString)*parseFloat(removingCommass(unitPrice))
+                $('.calc-total').text(addingCommas(totalPrice))
+            }
+
+        })
+    }
+
+    //clearing the calc
+
+    $('.calc-clear').on('click', function(){
+        newString = "0";
+        $('#calc-count').text(newString)
+    })
+
+    // deleting characters on the calculator
+    $(del).on('click', function(){
+        var currentString=changeResults.text()
+        unitPrice=$('#calc-unit-price').text()
+        //alert(unitPrice)
+        if(currentString.length>1){
+            newString=currentString.substr(0,currentString.length-1)
+            changeResults.text(newString)
+            $(".calc-count-2").text(newString)
+
+            
+        }
+        else{
+            newString=0
+            changeResults.text(0)
+            $(".calc-count-2").text(0)
+           
+        }
+
+        totalPrice=parseInt(newString)*parseFloat(removingCommass(unitPrice))
+        $('.calc-total').text(addingCommas(totalPrice))
+    })
+
+    //getting calc totals
+    $('#calc-total').on('click', function(){
+        menuItemCounterCont.find('.qty-count-txt').text(newString)  
+        $('#the-calculator').find('.close').click()
+        totalPriceCont.text(addingCommas(totalPrice)+".00")
+        gettingOrderTot()
+        gettingNumOfItems()      
+    })
+
+    //function that runs when the calc modal is closed
+    $('#the-calculator').on('hidden.bs.modal', function () {
+        unitPrice="0.00",
+        menuItemCounterCont=""
+        totalPriceCont="0.00"
+        totalPrice="0.00"
+        newString="0"
+
+        $('#calc-count').text('0')
+        $('.calc-count-2').text('0')
+        $('#calc-unit-price').text('0.00')
+        $('.calc-total').text(0.00)
+    });
+
+
+    // the calculator functioning end
+
     $("body").on('click','.add-qty', function(){
        var itemQuantity=parseFloat($(this).siblings('.qty-count').find('span').text())
        itemQuantity=itemQuantity+1
@@ -221,7 +315,7 @@ $(document).ready(function(){
 
        var theMenuItem=parseFloat($(this).parent().parent().parent().find('.the-item-index').text())
         var itemPrice=$('.menu-items-options-cont>div').eq(theMenuItem).find('.menu-item').find('.menu-item-amount').text()
-        $(this).parent().parent().parent().find('.checkout-item-price').text(itemPrice*itemQuantity+".00")
+        $(this).parent().parent().parent().find('.checkout-item-price').text(addingCommas(itemPrice*itemQuantity)+".00")
 
        gettingOrderTot()
         gettingNumOfItems()    
@@ -324,7 +418,7 @@ $(document).ready(function(){
                              </div>
                          </a>
      
-                         <a href="javascript: void(0);" class="d-inline-block mx-2 qty-count">
+                         <a href="javascript: void(0);" class="d-inline-block mx-2 qty-count"  data-toggle="modal" data-target="#the-calculator">
                              <div class="avatar-xs">
                                  <span class="avatar-title rounded-circle bg-secondary bg-soft text-white qty-count-txt">
                                      1
@@ -396,6 +490,32 @@ $(document).ready(function(){
         gettingOrderTot()
         gettingNumOfItems()       
     })
+
+    $("body").on("click",".qty-count", function(){
+        // alert("clicked")
+        unitPrice=$('#calc-unit-price').text()
+        menuItemCounterCont=$(this)
+        totalPriceCont=$(this).parent().parent().siblings('td').find('.checkout-item-price')
+        
+        var currentQuantity=parseInt($(this).text())
+        var theMenuItem=parseFloat($(this).parent().parent().parent().find('.the-item-index').text())
+        var itemPrice=$('.menu-items-options-cont>div').eq(theMenuItem).find('.menu-item').find('.menu-item-amount').text()
+
+        var selectedItemName=$('.menu-items-options-cont>div').eq(theMenuItem).find('.menu-item').find('.menu-item-name').text()
+        var totalItemPrice=itemPrice*currentQuantity
+        // alert(itemPrice)
+        $(".calc-count-2").text(currentQuantity)
+        $("#calc-count").text(currentQuantity)
+        $("#calc-unit-price").text(itemPrice)
+        $(".calc-total").text(addingCommas(parseFloat(totalItemPrice))+".00")
+        $('.selected-item-calc').text(selectedItemName)
+    })
+
+    
+   
+
+     
+    
 })
 // end of the pos scripts section
 

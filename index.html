@@ -357,7 +357,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content border-radius-0">
                         <div class="modal-header ">
-                            <h5 class="modal-title" id="exampleModalCenterTitle">French Fries Quantity</h5>
+                            <h5 class="modal-title" id="exampleModalCenterTitle"><span class="selected-item-calc"></span> Quantity</h5>
                             <span class="close font-28 cursor-pointer" data-dismiss="modal" aria-label="Close">
                                  <span aria-hidden="true">&times;</span>
                             </span>
@@ -365,60 +365,60 @@
                         <div class="modal-body text-capitalize">
                             <div class="row">
                                 <div class="col-12 text-center">
-                                    <h1 class="display-1 fw-light text-black mb-4">01</h1>
-                                    <p class="text-black-50">01(QTY) x 100(Unit Price) = KES 100</p>
+                                    <h1 class="display-1 fw-light text-black mb-4" id="calc-count">0</h1>
+                                    <p class="text-black-50"><span class="calc-count-2">01</span>(QTY) x <span id="calc-unit-price">0</span>(Unit Price) = KES <span class="calc-total">0.00</span></p>
                                 </div>
 
                                 
                                 <div class="col-9">
                                     <div class="row">
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect">1</div>
+                                            <div class="the-calc-num waves-effect" data-number>1</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect">2</div>
+                                            <div class="the-calc-num waves-effect" data-number>2</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect">3</div>
+                                            <div class="the-calc-num waves-effect" data-number>3</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect">4</div>
+                                            <div class="the-calc-num waves-effect" data-number>4</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect">5</div>
+                                            <div class="the-calc-num waves-effect" data-number>5</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect">6</div>
+                                            <div class="the-calc-num waves-effect" data-number>6</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect">7</div>
+                                            <div class="the-calc-num waves-effect" data-number>7</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect">8</div>
+                                            <div class="the-calc-num waves-effect" data-number>8</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect">9</div>
+                                            <div class="the-calc-num waves-effect" data-number>9</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect bg-danger text-white mb-0">clear</div>
+                                            <div class="the-calc-num waves-effect bg-danger text-white mb-0 calc-clear" data-clear>clear</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect mb-0">0</div>
+                                            <div class="the-calc-num waves-effect mb-0" data-number>0</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect mb-0">00</div>
+                                            <div class="the-calc-num waves-effect mb-0" data-number>00</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-3">
                                     <div class="row h-100">
                                         <div class="col-12">
-                                            <div class="the-calc-num waves-effect">
+                                            <div class="the-calc-num waves-effect" data-delete>
                                                 <i class="mdi mdi-backspace-outline"></i>
                                             </div>
                                         </div>
                                         <div class="col-12 h-75">
-                                            <div class="the-calc-num waves-effect mb-0 bg-primary h-100">
+                                            <div class="the-calc-num waves-effect mb-0 bg-primary h-100" id="calc-total">
                                                 ok
                                             </div>
                                         </div>
