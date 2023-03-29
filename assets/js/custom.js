@@ -245,7 +245,7 @@ $(document).ready(function(){
                 $(".calc-count-2").text(newString)
                 
                 totalPrice=parseInt(newString)*parseFloat(removingCommass(unitPrice))
-                $('.calc-total').text(addingCommas(totalPrice))
+                $('.calc-total').text(addingCommas(totalPrice)+".00")
             }
 
         })
@@ -283,9 +283,15 @@ $(document).ready(function(){
 
     //getting calc totals
     $('#calc-total').on('click', function(){
-        menuItemCounterCont.find('.qty-count-txt').text(newString)  
+        menuItemCounterCont.find('.qty-count-txt').text(newString) 
+
         $('#the-calculator').find('.close').click()
         totalPriceCont.text(addingCommas(totalPrice)+".00")
+
+        if(parseInt(newString)==0){
+            totalPriceCont.parent().parent().find('.remove-checkout-item').click()
+        }
+
         gettingOrderTot()
         gettingNumOfItems()      
     })
@@ -367,7 +373,32 @@ $(document).ready(function(){
 
     
     $("body").on('dblclick','.menu-item', function(){
+        var itemIndex=$(this).parent().index()
+
+        $('.menu-checkout-items table tbody tr').each(function(index){
+            var itemIndexTr=$(this).find('.the-item-index').text()
+            if(itemIndex==itemIndexTr){
+                menuItemCounterCont=$(this).find('.qty-count')
+                totalPriceCont=$(this).find('.checkout-item-price')
+                newString=parseInt($(this).find('.qty-count').text())
+                //alert(newString.toString())
+            }
+        })
+        $('#calc-count').text(newString)
+        $('.calc-count-2').text(newString)
+        
+
+        //alert(itemIndex)
         $("#the-calculator").modal('show')
+        unitPrice=$(this).find('.menu-item-amount').text()
+        var itemName=$(this).find('.menu-item-name').text()
+        $('.selected-item-calc').text(itemName)
+        $('#calc-unit-price').text(unitPrice)
+        unitPrice=parseFloat(removingCommass(unitPrice))
+
+        $('.calc-total').text(parseInt(newString)*unitPrice+".00")
+        
+       
         // alert("double clicked").dblclick()
         gettingOrderTot()
         gettingNumOfItems()
