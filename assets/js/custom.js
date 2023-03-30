@@ -7,6 +7,24 @@ function addingCommas(amount){
     amount=amount.toLocaleString("en")
     return amount
 }
+
+function clearBill(){
+    $(".menu-checkout-items tbody tr").each(function(index) {
+        $(this).remove()
+    });
+
+    $(".menu-slip-checkout .card-footer button").each(function(index) {
+        $(this).addClass('disabled').prop('disabled', true).removeClass('active'); 
+    });  
+    $('.empty-cart').removeClass("d-none") 
+    $('.menu-slip-checkout .card-header').addClass("d-none")
+    $('.total-container').addClass("d-none")  
+    $('.menu-checkout-items').addClass('d-none') 
+    $(".menu-item").each(function(index) {
+        $(this).removeClass('selected-item')
+     }); 
+     paymentMethod=""
+}
 $(window).on('load', function() {
     $('body').on('click', '.upload-the-contacts', function() {
         $('.selected-contacts-message').removeClass('d-none')
@@ -611,6 +629,7 @@ $(document).ready(function(){
        // $('#the-phone-num').find('.close').click()
        $('#the-phone-num .mpesa-inputs').addClass('d-none').siblings('.results-cont').removeClass('d-none')
         $('#the-phone-num .modal-content .modal-header').addClass('d-none')
+        clearBill()
     })
 })
 
@@ -619,6 +638,10 @@ $(document).ready(function(){
     var totalAmount,
     totalItems,
     paymentMethodsOptions=$('.the-slip-btns button')
+
+    $('.create-bill-btn').on('click', function(){
+        clearBill()
+    })
    
     if(paymentMethod===""){
         $('.place-order').addClass('disabled').prop('disabled', true);
@@ -716,6 +739,7 @@ $(document).ready(function(){
         $('.input-cont').addClass('d-none').siblings('.results-cont').removeClass('d-none')
         $('.change-amount').text("KES "+addingCommas(cashChange)+".00")
         $('#the-cash-pay .modal-header').addClass('d-none')
+        clearBill()
     })
 
     //closing the cash modal
@@ -727,5 +751,9 @@ $(document).ready(function(){
         $('#the-cash-pay').find('.modal-header').removeClass('d-none')
         $('.input-cont').removeClass('d-none').siblings('.results-cont').addClass('d-none')
     });
+
+    $('.delete-list').on('click', function(){
+        clearBill()
+    })
 })
 

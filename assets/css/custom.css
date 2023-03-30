@@ -1459,6 +1459,16 @@
   .font-13px{
     font-size: 13px !important;
   }
+  .btn-outline-primary{
+    color:#2fb895;
+    border-color: #2fb895;
+  }
+
+  .btn-outline-primary:hover{
+    color:black;
+    border-color: #2fb895;
+    background: #2fb895;
+  }
             
 
             

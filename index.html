@@ -669,9 +669,43 @@
                                             Create a bill that is to be paid later by the customer.
                                         </p>
 
-                                        <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="btn btn-lg btn-primary waves-effect waves-light w-100 text-uppercase font-13px">
+                                        <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="btn btn-lg btn-primary waves-effect waves-light w-100 text-uppercase font-13px create-bill-btn">
                                             <i class="bx bx-check-double font-size-16 align-middle me-2"></i> Create Bill
                                         </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- clearing the bill modal -->
+            <div class="modal fade" id="clear-bill" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content border-radius-0">
+                        <div class="modal-body results-cont p-5">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex flex-column text-center align-items-center justify-content-center">
+                                        <div>
+                                            <img src="assets/images/icons/delete.svg" alt="" class="img mb-4 confirmation-img">
+                                        </div>
+                                        <h4 class="text-black text-uppercase">Clear Items</h4>
+                                        <hr class="w-25 mt-0 h-4px text-success">
+                                        <p class="mb-4">
+                                            Are you sure you want to clear the items from this shopping list?
+                                        </p>
+
+                                       <div class="d-flex w-100">
+                                           
+                                            <button type="button" data-bs-dismiss="modal" aria-bs-label="Close" class="btn btn-outline-primary waves-effect waves-light me-3 btn-clock text-nowrap">No, Dont Delete</button>
+
+                                            <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="btn btn-lg btn-danger waves-effect waves-light text-uppercase font-12px flex-grow-1 delete-list">
+                                                <i class="bx bx-trash font-size-16 align-middle me-2"></i> Yes, Delete
+                                            </button>
+                                       </div>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -842,7 +876,7 @@
                                         <button type="button" data-bs-toggle="modal" data-bs-target="" disabled class="font-13px btn btn-lg me-2 btn-primary disabled waves-effect waves-light flex-grow-1 text-uppercase mr-2 place-order">
                                             <i class="bx bx-check-double font-size-16 align-middle me-3"></i> <span class="">Place Order</span>
                                         </button>
-                                        <button type="button" disabled class="btn btn-lg btn-outline-light disabled waves-effect text-uppercase font-13px">
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#clear-bill" disabled class="btn btn-lg btn-outline-light disabled waves-effect text-uppercase font-13px">
                                             <i class="bx bx-trash font-size-16 align-middle me-2"></i> Clear
                                         </button>
                                     </div>
