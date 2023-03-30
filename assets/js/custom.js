@@ -1,3 +1,4 @@
+var paymentMethod=""
 $(window).on('load', function() {
     $('body').on('click', '.upload-the-contacts', function() {
         $('.selected-contacts-message').removeClass('d-none')
@@ -486,6 +487,10 @@ $(document).ready(function(){
         gettingOrderTot()
         gettingNumOfItems()
 
+        if(paymentMethod===""){
+            $('.place-order').addClass('disabled').prop('disabled', true);
+        }
+
       
     })
 
@@ -541,12 +546,92 @@ $(document).ready(function(){
         $(".calc-total").text(addingCommas(parseFloat(totalItemPrice))+".00")
         $('.selected-item-calc').text(selectedItemName)
     })
-
-    
-   
-
-     
     
 })
 // end of the pos scripts section
+
+//the script for keying in the phone number
+$(document).ready(function(){
+    var phoneNum=""
+    newPhone = document.querySelectorAll('[phone-number]'),
+    totalAmount=$('.totAMount').text(),
+    PhoneDel=document.querySelectorAll('[phone-delete]')
+
+    //adding the characters
+    for (var i = 0; i < newPhone.length; i++){
+        newPhone[i].addEventListener("click", function(e){
+           // storing current input string and its last character in variables - used later
+            var currentString = $('.phone-input').val(); 
+            var lastChar = currentString[currentString.length - 1];
+            phoneNum=currentString+$(this).text()
+            $('.phone-input').val(phoneNum)
+        })
+    }
+
+    //clearing the phone input
+    $('.phone-clear').on('click', function(){
+        phoneNum = "";
+        $('.phone-input').val(phoneNum)
+    })
+    // deleting
+    $(PhoneDel).on('click', function(){
+        var currentString=phoneNum
+        phoneNum=currentString.substr(0,currentString.length-1)
+        $('.phone-input').val(phoneNum) 
+    })
+
+    //This should run everytime a modal is open
+    $('#the-phone-num').on('show.bs.modal', function () {
+        totalAmount=$('.totAMount').text()
+        $('.transaction-amount').text("KES "+totalAmount)
+    });
+
+    //closing the phone modal
+    $('#the-phone-num').on('hidden.bs.modal', function () {
+        phoneNum=""
+        $('.phone-input').val(phoneNum) 
+    });
+
+    //clicking okay on the phone
+    $('#phone-total').on('click', function(){
+        $('#the-phone-num').find('.close').click()
+    })
+})
+
+//selecting payment method
+$(document).ready(function(){
+    var totalAmount,
+    totalItems,
+    paymentMethodsOptions=$('.the-slip-btns button')
+   
+    if(paymentMethod===""){
+        $('.place-order').addClass('disabled').prop('disabled', true);
+    }
+
+    //selecting payment method
+    for (var i = 0; i < paymentMethodsOptions.length; i++){
+        paymentMethodsOptions[i].addEventListener("click", function(e){
+           paymentMethod=$(this).text()
+
+           $('.place-order').removeClass('disabled').prop('disabled', false);
+           if(paymentMethod==="MPESA"){
+            $('.place-order').attr('data-bs-target', "#the-phone-num");
+           }
+
+           if(paymentMethod==="Cash"){
+            $('.place-order').attr('data-bs-target', "#the-cash-pay");
+           }
+
+           if(paymentMethod==="Split"){
+            $('.place-order').attr('data-bs-target', "#the-split-pay");
+           }
+
+           if(paymentMethod==="Bill"){
+            $('.place-order').attr('data-bs-target', "#the-bill-pay");
+           }
+           
+        })
+    }
+
+})
 

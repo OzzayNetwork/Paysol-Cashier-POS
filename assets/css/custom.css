@@ -1414,7 +1414,7 @@
 
   .the-calc-num{
     padding: 1rem;
-    background-color: #CED1D3;
+    background-color: #f9f9f9;
     text-align: center;
     font-weight: 600;
     font-size: larger;
@@ -1426,9 +1426,14 @@
     min-height: 75px;
     margin-bottom: 24px;
     text-transform: uppercase;
+    border: 1.5px solid #adb5bd8c;
   }
   .the-calc-num.bg-danger{
     background-color: #FF003D !important;
+  }
+
+  .the-calc-num.bg-grey{
+    background-color:#adb5bd8c !important;
   }
   .card.card.dark-card.selected-item{
     background: #2D2D2D !important;
@@ -1441,6 +1446,9 @@
   .the-slip-btns button.active{
     background-color: white !important;
     color: black !important;
+  }
+  .mb-24{
+    margin-bottom: 24px !important;
   }
             
 
