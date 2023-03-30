@@ -6,7 +6,7 @@ Highcharts.chart('annual-sales', {
         }
     },
     title: {
-        text: "Annual Sales Value For Alex",
+        text: "My Annual Sales",
         style: {
             fontSize: '14px' 
          }
