@@ -1,4 +1,12 @@
 var paymentMethod=""
+function removingCommass(amount){
+    amount = parseFloat(amount.replace(/,/g, ''));
+    return amount
+}
+function addingCommas(amount){
+    amount=amount.toLocaleString("en")
+    return amount
+}
 $(window).on('load', function() {
     $('body').on('click', '.upload-the-contacts', function() {
         $('.selected-contacts-message').removeClass('d-none')
@@ -633,5 +641,83 @@ $(document).ready(function(){
         })
     }
 
+})
+
+//cash payment method modal
+$(document).ready(function(){
+    var totalAmount=$('.totAMount').text(),
+    totalItems,
+    amountReceived,
+    keyPressed=document.querySelectorAll('[cash-number]'),
+    cashDel=document.querySelectorAll('[cash-delete]'),
+    cashChange
+
+    //adding the characters
+    for (var i = 0; i < keyPressed.length; i++){
+        keyPressed[i].addEventListener("click", function(e){
+            totalAmount=$('.totAMount').text()
+            $('.transaction-amount').text("KES "+totalAmount)
+           // storing current input string and its last character in variables - used later
+            var currentString = $('.cash-input').val(); 
+            var lastChar = currentString[currentString.length - 1];
+           
+            if(currentString=="0"){
+                amountReceived=""
+            }  
+
+            if(currentString=="00"){
+                amountReceived=""
+            } 
+
+            amountReceived=currentString+$(this).text()
+            cashChange=parseFloat(amountReceived)-parseFloat(removingCommass(totalAmount))
+
+            $('.cash-input').val(amountReceived)
+            $('.change-input').val(addingCommas(cashChange))
+        })
+    }
+
+    // deleting
+    $(cashDel).on('click', function(){
+        var currentString=amountReceived
+        amountReceived=currentString.substr(0,currentString.length-1)
+        
+        cashChange=parseFloat(amountReceived)-parseFloat(removingCommass(totalAmount))
+
+        $('.cash-input').val(amountReceived)
+        $('.change-input').val(addingCommas(cashChange))
+    })
+
+    $('#the-cash-pay').on('show.bs.modal', function () {
+        totalAmount=$('.totAMount').text()
+        $('.transaction-amount').text("KES "+totalAmount)
+    });
+
+     //clearing the cash input
+     $('.cash-clear').on('click', function(){
+        amountReceived=""
+        cashChange = "";
+        $('.cash-input').val(amountReceived)
+        $('.change-input').val("")
+    })
+
+    //clicking okay on the phone
+    $('#cash-total').on('click', function(){
+        //$('#the-cash-pay').find('.close').click()
+        $('.input-cont').addClass('d-none').siblings().removeClass('d-none')
+        $('.change-amount').text("KES "+addingCommas(cashChange)+".00")
+        $('#the-cash-pay').find('.modal-header').addClass('d-none')
+        
+    })
+
+    //closing the cash modal
+    $('#the-cash-pay').on('hidden.bs.modal', function () {
+        amountReceived=""
+        cashChange = ""
+        $('.cash-input').val(amountReceived)
+        $('.change-input').val("") 
+        $('#the-cash-pay').find('.modal-header').removeClass('d-none')
+        $('.input-cont').removeClass('d-none').siblings().addClass('d-none')
+    });
 })
 

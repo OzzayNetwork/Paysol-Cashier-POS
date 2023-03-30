@@ -443,7 +443,7 @@
                             <div class="row">
                                 <div class="col-12 text-center">
                                     <input type="text" pattern="[0-9]+" class="form-control mb-3 text-center p-3 font-18px phone-input" placeholder="Enter Phone Number">
-                                    <h6 class="pb-3 text-black-50">Transaction amount of  <span class="text-black fw-semibold transaction-amount">KES 12,900</span> will be sent to the client</h6>
+                                    <h6 class="pb-3 text-black-50">Transaction amount of  <span class="text-black fw-semibold transaction-amount">KES 0.00</span> will be sent to the client</h6>
                                 </div>
 
                                 
@@ -518,68 +518,75 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content border-radius-0">
                         <div class="modal-header ">
-                            <h5 class="modal-title text-uppercase" id="exampleModalCenterTitle">MPESA PHONE NUmber</h5>
+                            <h5 class="modal-title text-uppercase" id="exampleModalCenterTitle">Cash Amount Received</h5>
                             <span class="close font-28 cursor-pointer" data-bs-dismiss="modal" aria-bs-label="Close">
                                  <span aria-hidden="true">&times;</span>
                             </span>
                         </div>
-                        <div class="modal-body text-capitalize">
+                        <div class="modal-body text-capitalize input-cont">
                             <div class="row">
                                 <div class="col-12 text-center">
-                                    <input type="text" pattern="[0-9]+" class="form-control mb-3 text-center p-3 font-18px phone-input" placeholder="Enter Phone Number">
-                                    <h6 class="pb-3 text-black-50">Transaction amount of  <span class="text-black fw-semibold transaction-amount">KES 12,900</span> will be sent to the client</h6>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <input type="text" pattern="[0-9]," class="form-control mb-3 text-center p-3 font-18px cash-input" placeholder="Amount Received">
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" disabled pattern="[0-9]" class="form-control mb-3 text-center p-3 font-18px change-input" placeholder="Change">
+                                        </div>
+                                    </div>
+                                    <h6 class="pb-3 text-black-50">The Transaction Amount is <span class="text-black fw-semibold transaction-amount">KES 0.00</span></h6>
                                 </div>
 
                                 
                                 <div class="col-9">
                                     <div class="row">
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect" phone-number>1</div>
+                                            <div class="the-calc-num waves-effect" cash-number>1</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect" phone-number>2</div>
+                                            <div class="the-calc-num waves-effect" cash-number>2</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect" phone-number>3</div>
+                                            <div class="the-calc-num waves-effect" cash-number>3</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect" phone-number>4</div>
+                                            <div class="the-calc-num waves-effect" cash-number>4</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect" phone-number>5</div>
+                                            <div class="the-calc-num waves-effect" cash-number>5</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect" phone-number>6</div>
+                                            <div class="the-calc-num waves-effect" cash-number>6</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect" phone-number>7</div>
+                                            <div class="the-calc-num waves-effect" cash-number>7</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect" phone-number>8</div>
+                                            <div class="the-calc-num waves-effect" cash-number>8</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect" phone-number>9</div>
+                                            <div class="the-calc-num waves-effect" cash-number>9</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect bg-danger text-white mb-0 phone-clear" phone-clear>clear</div>
+                                            <div class="the-calc-num waves-effect bg-danger text-white mb-0 cash-clear" cash-clear>clear</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect mb-0" phone-number>0</div>
+                                            <div class="the-calc-num waves-effect mb-0" cash-number>0</div>
                                         </div>
                                         <div class="col-4">
-                                            <div class="the-calc-num waves-effect mb-0" phone-number>+</div>
+                                            <div class="the-calc-num waves-effect mb-0" cash-number>00</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-3">
                                     <div class="row h-100">
                                         <div class="col-12">
-                                            <div class="the-calc-num waves-effect h-25 bg-grey" phone-delete>
+                                            <div class="the-calc-num waves-effect h-25 bg-grey" cash-delete>
                                                 <i class="mdi mdi-backspace-outline"></i>
                                             </div>
                                         </div>
                                         <div class="col-12 h-75">
-                                            <div class="the-calc-num waves-effect bg-primary h-100 mb-0" id="phone-total">
+                                            <div class="the-calc-num waves-effect bg-primary h-100 mb-0" id="cash-total">
                                                 ok
                                             </div>
                                         </div>
@@ -589,7 +596,28 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <p class="mt-3 text-center">Remind the client to check their phone after pressing <span class="text-black fw-semibold">OK</span></p>
+                                    <p class="mt-3 text-center d-none">Remind the client to check their phone after pressing <span class="text-black fw-semibold">OK</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-body d-none results-cont">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex flex-column text-center align-items-center justify-content-center">
+                                        <div>
+                                            <img src="assets/images/icons/bill-check.svg" alt="" class="img mb-4 confirmation-img">
+                                        </div>
+                                        <h4 class="text-black text-capitalize">Transaction Confirmed</h4>
+                                        <hr class="w-25 mt-0 h-4px text-success">
+                                        <p class="mb-4">
+                                            Transaction of <span class="text-black fw-semibold transaction-amount">KES 0.00</span> has been confirmed. Remember to give <br> <span class="text-black fw-semibold change-amount">KES 0.00</span> as change to the client.
+                                        </p>
+
+                                        <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="btn mb-4 btn-lg btn-primary waves-effect waves-light w-100 text-uppercase">
+                                            <i class="bx bx-check-double font-size-16 align-middle me-2"></i> Done
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -756,10 +784,10 @@
                                         <button type="button" disabled class="btn btn-light disabled waves-effect text-uppercase btn-rounded flex-grow-1 px-3">BILL</button>
                                     </div>
                                     <div class="d-flex mb-3">
-                                        <button type="button" data-bs-toggle="modal" data-bs-target="" disabled class="btn me-2 btn-primary disabled waves-effect waves-light flex-grow-1 text-uppercase mr-2 place-order">
-                                            <i class="bx bx-check-double font-size-16 align-middle me-3"></i> Place Order
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="" disabled class="font-13px btn btn-lg me-2 btn-primary disabled waves-effect waves-light flex-grow-1 text-uppercase mr-2 place-order">
+                                            <i class="bx bx-check-double font-size-16 align-middle me-3"></i> <span class="">Place Order</span>
                                         </button>
-                                        <button type="button" disabled class="btn btn-outline-light disabled waves-effect text-uppercase">
+                                        <button type="button" disabled class="btn btn-lg btn-outline-light disabled waves-effect text-uppercase font-13px">
                                             <i class="bx bx-trash font-size-16 align-middle me-2"></i> Clear
                                         </button>
                                     </div>

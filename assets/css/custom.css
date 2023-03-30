@@ -1450,6 +1450,15 @@
   .mb-24{
     margin-bottom: 24px !important;
   }
+  .confirmation-img{
+    height: 160px;
+  }
+  .h-4px{
+    height: 4px !important;
+  }
+  .font-13px{
+    font-size: 13px !important;
+  }
             
 
             
