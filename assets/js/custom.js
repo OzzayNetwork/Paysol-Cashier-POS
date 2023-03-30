@@ -598,11 +598,19 @@ $(document).ready(function(){
     $('#the-phone-num').on('hidden.bs.modal', function () {
         phoneNum=""
         $('.phone-input').val(phoneNum) 
+        $('#the-phone-num .mpesa-inputs').removeClass('d-none').siblings('.results-cont').addClass('d-none')
+        $('#the-phone-num .modal-content .modal-header').removeClass('d-none')
+
+        $('.mpesa-inputs').removeClass('d-none').siblings('.results-cont').addClass('d-none')
+        //$('.change-amount').text("KES "+addingCommas(cashChange)+".00")
+        $('#the-phone-num').find('.modal-header').removeClass('d-none')
     });
 
     //clicking okay on the phone
     $('#phone-total').on('click', function(){
-        $('#the-phone-num').find('.close').click()
+       // $('#the-phone-num').find('.close').click()
+       $('#the-phone-num .mpesa-inputs').addClass('d-none').siblings('.results-cont').removeClass('d-none')
+        $('#the-phone-num .modal-content .modal-header').addClass('d-none')
     })
 })
 
@@ -634,8 +642,9 @@ $(document).ready(function(){
             $('.place-order').attr('data-bs-target', "#the-split-pay");
            }
 
-           if(paymentMethod==="Bill"){
+           if(paymentMethod==="BILL"){
             $('.place-order').attr('data-bs-target', "#the-bill-pay");
+            //alert("sfsdf")
            }
            
         })
@@ -704,10 +713,9 @@ $(document).ready(function(){
     //clicking okay on the phone
     $('#cash-total').on('click', function(){
         //$('#the-cash-pay').find('.close').click()
-        $('.input-cont').addClass('d-none').siblings().removeClass('d-none')
+        $('.input-cont').addClass('d-none').siblings('.results-cont').removeClass('d-none')
         $('.change-amount').text("KES "+addingCommas(cashChange)+".00")
-        $('#the-cash-pay').find('.modal-header').addClass('d-none')
-        
+        $('#the-cash-pay .modal-header').addClass('d-none')
     })
 
     //closing the cash modal
@@ -717,7 +725,7 @@ $(document).ready(function(){
         $('.cash-input').val(amountReceived)
         $('.change-input').val("") 
         $('#the-cash-pay').find('.modal-header').removeClass('d-none')
-        $('.input-cont').removeClass('d-none').siblings().addClass('d-none')
+        $('.input-cont').removeClass('d-none').siblings('.results-cont').addClass('d-none')
     });
 })
 

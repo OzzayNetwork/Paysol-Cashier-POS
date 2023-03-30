@@ -439,7 +439,7 @@
                                  <span aria-hidden="true">&times;</span>
                             </span>
                         </div>
-                        <div class="modal-body text-capitalize">
+                        <div class="modal-body text-capitalize mpesa-inputs">
                             <div class="row">
                                 <div class="col-12 text-center">
                                     <input type="text" pattern="[0-9]+" class="form-control mb-3 text-center p-3 font-18px phone-input" placeholder="Enter Phone Number">
@@ -509,6 +509,26 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="modal-body results-cont p-5 d-none">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex flex-column text-center align-items-center justify-content-center">
+                                        <div>
+                                            <img src="assets/images/icons/bill-check.svg" alt="" class="img mb-4 confirmation-img">
+                                        </div>
+                                        <h4 class="text-black text-capitalize">Transaction Confirmed</h4>
+                                        <hr class="w-25 mt-0 h-4px text-success">
+                                        <p class="mb-4">
+                                            Transaction of <span class="text-black fw-semibold transaction-amount">KES 0.00</span> has been received <br> from <span class="text-black fw-semibold">0704 549 859</span>. 
+                                        </p>
+
+                                        <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="btn btn-lg btn-primary waves-effect waves-light w-100 text-uppercase font-13px">
+                                            <i class="bx bx-check-double font-size-16 align-middle me-2"></i> Done
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -517,7 +537,7 @@
             <div class="modal fade" id="the-cash-pay" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content border-radius-0">
-                        <div class="modal-header ">
+                        <div class="modal-header">
                             <h5 class="modal-title text-uppercase" id="exampleModalCenterTitle">Cash Amount Received</h5>
                             <span class="close font-28 cursor-pointer" data-bs-dismiss="modal" aria-bs-label="Close">
                                  <span aria-hidden="true">&times;</span>
@@ -601,7 +621,7 @@
                             </div>
                         </div>
 
-                        <div class="modal-body d-none results-cont">
+                        <div class="modal-body d-none results-cont p-5">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="d-flex flex-column text-center align-items-center justify-content-center">
@@ -614,8 +634,43 @@
                                             Transaction of <span class="text-black fw-semibold transaction-amount">KES 0.00</span> has been confirmed. Remember to give <br> <span class="text-black fw-semibold change-amount">KES 0.00</span> as change to the client.
                                         </p>
 
-                                        <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="btn mb-4 btn-lg btn-primary waves-effect waves-light w-100 text-uppercase">
+                                        <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="btn btn-lg btn-primary waves-effect waves-light w-100 text-uppercase">
                                             <i class="bx bx-check-double font-size-16 align-middle me-2"></i> Done
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- creating a bill -->
+            <div class="modal fade" id="the-bill-pay" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content border-radius-0">
+                        <div class="modal-header d-none">
+                            <h5 class="modal-title text-uppercase" id="exampleModalCenterTitle">Cash Amount Received</h5>
+                            <span class="close font-28 cursor-pointer" data-bs-dismiss="modal" aria-bs-label="Close">
+                                 <span aria-hidden="true">&times;</span>
+                            </span>
+                        </div>
+
+                        <div class="modal-body results-cont p-5">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex flex-column text-center align-items-center justify-content-center">
+                                        <div>
+                                            <img src="assets/images/icons/bill-print.svg" alt="" class="img mb-4 confirmation-img">
+                                        </div>
+                                        <h4 class="text-black text-capitalize">Create A Bill</h4>
+                                        <hr class="w-25 mt-0 h-4px text-success">
+                                        <p class="mb-4">
+                                            Create a bill that is to be paid later by the customer.
+                                        </p>
+
+                                        <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="btn btn-lg btn-primary waves-effect waves-light w-100 text-uppercase font-13px">
+                                            <i class="bx bx-check-double font-size-16 align-middle me-2"></i> Create Bill
                                         </button>
                                     </div>
                                 </div>
