@@ -1,4 +1,5 @@
-var paymentMethod=""
+var paymentMethod="",
+activeSplitInput=$('.phone-split-input')
 function removingCommass(amount){
     amount = parseFloat(amount.replace(/,/g, ''));
     return amount
@@ -578,7 +579,7 @@ $(document).ready(function(){
 
 //the script for keying in the phone number
 $(document).ready(function(){
-    var phoneNum=""
+    var phoneNum="",
     newPhone = document.querySelectorAll('[phone-number]'),
     totalAmount=$('.totAMount').text(),
     PhoneDel=document.querySelectorAll('[phone-delete]')
@@ -662,7 +663,7 @@ $(document).ready(function(){
            }
 
            if(paymentMethod==="Split"){
-            $('.place-order').attr('data-bs-target', "#the-split-pay");
+            $('.place-order').attr('data-bs-target', "#the-split-pay")
            }
 
            if(paymentMethod==="BILL"){
@@ -755,5 +756,96 @@ $(document).ready(function(){
     $('.delete-list').on('click', function(){
         clearBill()
     })
+})
+
+// split payment method
+$(document).ready(function(){
+    var phoneNum="",
+    mpesaAmount,
+    totalAmount,
+    cashAmount,
+    splitDialPad=document.querySelectorAll('[split-number]'),
+    splitDel=document.querySelectorAll('[split-delete]')
+
+    $('.phone-split-input').on('click', function(){
+        activeSplitInput=$(this)
+        console.log(activeSplitInput)
+    })
+
+    $('.amount-split-input').on('click', function(){
+        activeSplitInput=$(this)
+        console.log(activeSplitInput)
+    })
+
+    $('#the-split-pay').on('show.bs.modal', function () {
+        totalAmount=$('.totAMount').text()
+        totalAmount=removingCommass(totalAmount)
+        totalAmount=parseFloat(totalAmount)
+    });
+    
+
+    //adding the characters
+    for (var i = 0; i < splitDialPad.length; i++){
+        splitDialPad[i].addEventListener("click", function(e){
+           // storing current input string and its last character in variables - used later
+            var currentString = activeSplitInput.val(); 
+            var lastChar = currentString[currentString.length - 1];
+            phoneNum=currentString+$(this).text()
+            activeSplitInput.val(phoneNum)
+            mpesaAmount=parseFloat($('.amount-split-input').val())
+            mpesaAmount=parseFloat(mpesaAmount)
+            
+            cashAmount=totalAmount-mpesaAmount
+            $('.split-cash-amount').text(addingCommas(cashAmount)+".00")
+        })
+    }
+
+     // deleting
+     $(splitDel).on('click', function(){
+        var currentString=activeSplitInput.val()
+        currentString=currentString.substr(0,currentString.length-1)
+        activeSplitInput.val(currentString)
+
+        mpesaAmount=parseFloat($('.amount-split-input').val())
+        mpesaAmount=parseFloat(mpesaAmount)
+
+        cashAmount=totalAmount-mpesaAmount
+        $('.split-cash-amount').text(addingCommas(cashAmount)+".00")
+    })
+
+    //clear inputs
+    $('.cash-clear').on('click', function(){
+        phoneNum=""
+        mpesaAmount = "";
+        $('.phone-split-input').val("")
+        $('.amount-split-input').val("")
+
+        mpesaAmount=parseFloat($('.amount-split-input').val())
+         mpesaAmount=parseFloat(mpesaAmount)
+
+        cashAmount=totalAmount-mpesaAmount
+        $('.split-cash-amount').text(addingCommas(cashAmount)+".00")
+    })
+
+    //pressing okay for split payment
+    $('body').on('click','#split-total', function(){
+        $('#the-split-pay .input-cont').addClass('d-none')
+        $('#the-split-pay .results-cont').removeClass('d-none')
+        $('#the-split-pay .modal-header').addClass('d-none')
+
+        $('.split-mpesa-amount').text("KES "+addingCommas(mpesaAmount)+".00")
+        $('.split-cash-amount').text("KES "+addingCommas(cashAmount)+".00")
+        clearBill()
+    })
+
+    //closing the cash modal
+    $('#the-split-pay').on('hidden.bs.modal', function () {
+        mpesaAmount=""
+        cashAmount = ""
+        $('.amount-split-input').val("")
+        $('.phone-split-input').val("") 
+        $('#the-split-pay').find('.modal-header').removeClass('d-none')
+        $('#the-split-pay .input-cont').removeClass('d-none').siblings('.results-cont').addClass('d-none')
+    });
 })
 
