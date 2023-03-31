@@ -1469,6 +1469,15 @@
     border-color: #2fb895;
     background: #2fb895;
   }
+  .auth-full-bg .bg-overlay::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #2fb895b8 0%, rgb(18 13 12 / 63%) 100%);
+}
             
 
             
