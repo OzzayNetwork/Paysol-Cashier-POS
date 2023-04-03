@@ -849,3 +849,15 @@ $(document).ready(function(){
     });
 })
 
+//changing item pricing
+$(document).ready(function(){
+    $('.edit-price').on('click', function(){
+        var itemName=$(this).parent().siblings('td').eq(0).text()
+        var itemPrice=$(this).parent().siblings('td').eq(4).text()
+        var itemMSL=$(this).parent().siblings('td').eq(2).text()
+        $('.item-price-name').text(itemName)
+        $('.item-price').val(itemPrice)
+        $('.item-msl').val(itemMSL)
+    })
+})
+
