@@ -25,6 +25,7 @@ function clearBill(){
         $(this).removeClass('selected-item')
      }); 
      paymentMethod=""
+     
 }
 
 var clickedItemIndex
@@ -798,6 +799,9 @@ $(document).ready(function(){
 
     $('.delete-list').on('click', function(){
         clearBill()
+       $('.menu-item').each(function(index){
+            $(this).find('.item-qty').text(defaultItemValues[index])
+       })
     })
 })
 
