@@ -1486,6 +1486,32 @@
     right: 15px;
     color: #ffffff1c;
 }
+@media only screen and (max-width: 992px) {
+    .medium-menu-container{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        height: 100vh;
+        width: 100%;
+        padding: 0px;
+        z-index: 1002;
+        display: none;
+    }
+    .medium-menu-container .menu-slip-checkout{
+        height: 100%;
+        width: 100%;
+    }
+    .d-md-none{
+        display: none;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .close-cart{
+        display: none;
+    }
+  }
             
 
             

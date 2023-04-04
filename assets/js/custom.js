@@ -255,6 +255,8 @@ $(document).ready(function(){
             menuItems=menuItems+totalItems
         });
         $('.total-items').text(menuItems) 
+        $('#items-cart span').text(menuItems) 
+        $('#items-cart span').removeClass('d-none')
     }
 
     function addingCommas(amount){
@@ -906,5 +908,18 @@ $(document).ready(function(){
         $('.item-price').val(itemPrice)
         $('.item-msl').val(itemMSL)
     })
+})
+
+//displaying the cart on medium screens
+$(document).ready(function(){
+
+    $('#items-cart').on('click', function(){
+        $('.medium-menu-container').toggleClass('d-block')
+    })
+
+    $('.close-cart').on('click', function(){
+        $('.medium-menu-container').removeClass('d-block')  
+    })
+    
 })
 
