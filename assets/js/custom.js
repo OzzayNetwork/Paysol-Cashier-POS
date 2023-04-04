@@ -26,6 +26,32 @@ function clearBill(){
      }); 
      paymentMethod=""
 }
+
+var clickedItemIndex
+var initialQty=0
+
+// reducing item quantity function
+function reduceQty(itemIndex,itemQty){
+    var itemQtyAmt=parseFloat($('.menu-item').eq(itemIndex).find('.item-qty').text())
+    var thevariance=parseInt(itemQty)+parseInt(initialQty)
+    var newAmount=itemQtyAmt-thevariance
+    $('.menu-item').eq(itemIndex).find('.item-qty').text(newAmount)
+    initialQty=0
+}
+
+// inital item counts
+let defaultItemValues=[]
+for (var i = 0; i < $('.menu-item').length; i++){
+   var itemCount=$('.menu-item').find('.item-qty').eq(i).text()
+   var itemIndex=i
+   defaultItemValues[i]=itemCount
+}
+
+function restoreCountVal(itemIndex){
+    var itemQty=defaultItemValues[itemIndex]
+    $('.menu-item').eq(itemIndex).find('.item-qty').text(itemQty)
+}
+
 $(window).on('load', function() {
     $('body').on('click', '.upload-the-contacts', function() {
         $('.selected-contacts-message').removeClass('d-none')
@@ -321,7 +347,9 @@ $(document).ready(function(){
         }
 
         gettingOrderTot()
-        gettingNumOfItems()      
+        gettingNumOfItems() 
+        reduceQty(clickedItemIndex,newString)
+           
     })
 
     //function that runs when the calc modal is closed
@@ -338,6 +366,8 @@ $(document).ready(function(){
         $('.calc-total').text(0.00)
     });
 
+    
+
 
     // the calculator functioning end
 
@@ -352,7 +382,9 @@ $(document).ready(function(){
         $(this).parent().parent().parent().find('.checkout-item-price').text(addingCommas(itemPrice*itemQuantity)+".00")
 
        gettingOrderTot()
-        gettingNumOfItems()    
+        gettingNumOfItems()
+        reduceQty(theMenuItem,1)  
+       
        
     })
 
@@ -395,7 +427,8 @@ $(document).ready(function(){
         var itemPrice=$('.menu-items-options-cont>div').eq(theMenuItem).find('.menu-item').find('.menu-item-amount').text()
         $(this).parent().parent().parent().find('.checkout-item-price').text(itemPrice*itemQuantity+".00")
         gettingOrderTot()
-        gettingNumOfItems()    
+        gettingNumOfItems()  
+        reduceQty(theMenuItem,-1)    
         
      })
 
@@ -425,11 +458,16 @@ $(document).ready(function(){
         unitPrice=parseFloat(removingCommass(unitPrice))
 
         $('.calc-total').text(parseInt(newString)*unitPrice+".00")
+
+        var defaultQty=parseInt(defaultItemValues[itemIndex])
+        var cartQty=parseInt($(this).find('.item-qty').text())
         
        
         // alert("double clicked").dblclick()
         gettingOrderTot()
         gettingNumOfItems()
+        clickedItemIndex=itemIndex
+        initialQty=parseInt(defaultQty-cartQty)
     })
 
     $("body").on('click','.menu-item', function(){
@@ -518,6 +556,8 @@ $(document).ready(function(){
             $('.place-order').addClass('disabled').prop('disabled', true);
         }
 
+        reduceQty(clickedIndex,1)
+
       
     })
 
@@ -551,7 +591,8 @@ $(document).ready(function(){
          }); 
         }
         gettingOrderTot()
-        gettingNumOfItems()       
+        gettingNumOfItems()   
+        restoreCountVal(theMenuItem)    
     })
 
     $("body").on("click",".qty-count", function(){
@@ -572,6 +613,8 @@ $(document).ready(function(){
         $("#calc-unit-price").text(itemPrice)
         $(".calc-total").text(addingCommas(parseFloat(totalItemPrice))+".00")
         $('.selected-item-calc').text(selectedItemName)
+        clickedItemIndex= theMenuItem
+        initialQty=parseInt($(this).text())
     })
     
 })

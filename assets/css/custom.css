@@ -1478,6 +1478,14 @@
     height: 100%;
     background: linear-gradient(to right, #2fb895b8 0%, rgb(18 13 12 / 63%) 100%);
 }
+.menu-item h6{
+    font-weight: 400;
+    font-size: 34px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #ffffff1c;
+}
             
 
             
