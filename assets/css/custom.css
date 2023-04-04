@@ -1512,6 +1512,155 @@
         display: none;
     }
   }
+
+  @media (max-width: 576px) {
+    #the-toast{
+        font-size: 12px;
+    }
+    .history-card{
+        height: auto !important;
+        margin-bottom: 0px !important;
+    }
+    .acount-type a.active:before{
+        display:none
+    }
+    .mb-sm-0{
+        margin-bottom: 0px !important;
+    }
+    .avatar-card{
+        height: 5.5rem;
+        width:5.5rem;
+        /* display: none; */
+    }
+    .rad-sm-8px{
+        border-radius:8px !important;
+    }
+    .pt-sm-24{
+        padding-top: 24px !important;
+    }
+    .border-sm-bottom-1px{
+        border-bottom: 1px solid #c1c3cc54;
+    }
+    .page-content{
+        padding-top: 70px !important;
+        padding-bottom: 125px !important;
+    }
+    .mt-sm-0{
+        margin-top: 0px !important;
+    }
+    .p-sm-0{
+        padding: 0px !important;
+    }
+    .pt-sm-0{
+        padding-top: 0px !important;
+    }
+    .no-shadow-sm{
+        -webkit-box-shadow:none !important;
+        box-shadow: none !important;
+    }
+    body{
+        background:white
+    }
+    .py-sm-0{
+        padding-top:0px !important;
+        padding-bottom:0px !important
+    }
+    .transaction-date{
+        font-size: 10px;
+    }
+    .d-sm-flex{
+        display: flex !important;
+    }
+    .product-items-trunc{
+        width: 120px !important;
+    }
+    .d-sm-none{
+        display:none !important
+    }
+    .the-msg-2 {
+        max-width: 76vw;
+    }
+    .navbar-brand-box {
+        display: none;
+    }
+    .dataTables__top .dropdown-toggle i {
+        line-height: revert
+    }
+    .dt-buttons .bx,
+    .dt-buttons .mdi {
+        margin: 0px !important;
+    }
+    .table-rows-selector>button {
+        padding: .47rem .75rem !important;
+        padding-left: .75rem !important;
+        position: relative !important;
+        padding-right: 30px !important;
+        font-size: 12px !important;
+    }
+    .table-rows-selector>button::before {
+        display: none;
+    }
+    .mr-sm-0 {
+        margin: 0px !important;
+    }
+    .card {
+        border-radius: 0px;
+    }
+    
+    .page-title-box {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .page-content {
+        padding-right: 0px;
+        padding-right: 0px;
+    }
+    .page-content,
+    .container-fluid {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .px-sm-30px {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+    .pr-sm-0{
+        padding-right:0px !important;
+    }
+    .px-sm-0{
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+    .mx-sm-2{
+        margin-left: 0.75rem !important;
+        margin-right: 0.75rem !important;
+    }
+    .mx-sm-3{
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+
+    .py-sm-3{
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .px-sm-2{
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    .pl-sm-2{
+        padding-left: .75rem !important;
+    }
+
+    .pr-sm-2{
+        padding-right: .75rem !important;
+    }
+    .pt-sm-1{
+        padding-top: .25rem !important;
+    }
+}
+
             
 
             
