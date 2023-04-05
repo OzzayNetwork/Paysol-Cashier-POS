@@ -473,6 +473,45 @@ $(document).ready(function(){
         initialQty=parseInt(defaultQty-cartQty)
     })
 
+    //mouse hold event starts here
+    $("body").on('contextmenu','.menu-item', function(e){
+        e.preventDefault()
+        var itemIndex=$(this).parent().index()
+
+        $('.menu-checkout-items table tbody tr').each(function(index){
+            var itemIndexTr=$(this).find('.the-item-index').text()
+            if(itemIndex==itemIndexTr){
+                menuItemCounterCont=$(this).find('.qty-count')
+                totalPriceCont=$(this).find('.checkout-item-price')
+                newString=parseInt($(this).find('.qty-count').text())
+                //alert(newString.toString())
+            }
+        })
+        $('#calc-count').text(newString)
+        $('.calc-count-2').text(newString)
+        
+
+        //alert(itemIndex)
+        $("#the-calculator").modal('show')
+        unitPrice=$(this).find('.menu-item-amount').text()
+        var itemName=$(this).find('.menu-item-name').text()
+        $('.selected-item-calc').text(itemName)
+        $('#calc-unit-price').text(unitPrice)
+        unitPrice=parseFloat(removingCommass(unitPrice))
+
+        $('.calc-total').text(parseInt(newString)*unitPrice+".00")
+
+        var defaultQty=parseInt(defaultItemValues[itemIndex])
+        var cartQty=parseInt($(this).find('.item-qty').text())
+        
+       
+        // alert("double clicked").dblclick()
+        gettingOrderTot()
+        gettingNumOfItems()
+        clickedItemIndex=itemIndex
+        initialQty=parseInt(defaultQty-cartQty)
+    })
+
     $("body").on('click','.menu-item', function(){
         $('.empty-cart').addClass("d-none") 
         $('.menu-slip-checkout .card-header').removeClass("d-none")
@@ -920,6 +959,6 @@ $(document).ready(function(){
     $('.close-cart').on('click', function(){
         $('.medium-menu-container').removeClass('d-block')  
     })
-    
+
 })
 
