@@ -1486,6 +1486,14 @@
     right: 15px;
     color: #ffffff1c;
 }
+
+.login-pad .the-calc-num{
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: larger;
+}
+
 @media only screen and (max-width: 992px) {
     .medium-menu-container{
         position: fixed;

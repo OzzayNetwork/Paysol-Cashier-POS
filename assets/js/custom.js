@@ -962,3 +962,37 @@ $(document).ready(function(){
 
 })
 
+//login keypad
+$(document).ready(function(){
+    var otalItems,
+    amountReceived,
+    keyPressed=document.querySelectorAll('[login-number]'),
+    loginDel=document.querySelectorAll('[login-delete]'),
+    cashChange
+
+    //adding the characters
+    for (var i = 0; i < keyPressed.length; i++){
+        keyPressed[i].addEventListener("click", function(e){
+           // storing current input string and its last character in variables - used later
+            var currentString = $('.login-input').val(); 
+            var lastChar = currentString[currentString.length - 1];
+
+            currentString=currentString+$(this).text()
+
+            $('.login-input').val(currentString)
+        })
+    }
+
+    $('.login-clear').on('click', function(){
+        $('.login-input').val("")
+    })
+
+    $(loginDel).on('click', function(){
+        //alert('clicked')
+
+        var currentString=$('.login-input').val(); 
+        currentString=currentString.substr(0,currentString.length-1)
+        $('.login-input').val(currentString)
+    })
+})
+
